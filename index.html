@@ -5,38 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JK Tech Scope | Professional IT Solutions</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .container { border: 1px solid #1e293b; padding: 3rem; border-radius: 15px; background: #1e293b; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 500px; }
-        h1 { color: #38bdf8; margin-bottom: 0.5rem; }
-        p { color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
-        .maintenance-box { margin: 1.5rem 0; padding: 1rem; border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.1); border-radius: 4px; text-align: left; }
-        .maintenance-title { color: #f59e0b; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; }
-        .pulse { height: 10px; width: 10px; background-color: #f59e0b; border-radius: 50%; display: inline-block; margin-right: 10px; animation: pulse-animation 2s infinite; }
-        @keyframes pulse-animation { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        .services { margin-top: 1.5rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .tag { background: #334155; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid #38bdf8; }
-        .footer { margin-top: 2rem; font-size: 0.9rem; color: #64748b; }
+        /* Updated to match Corporate Profile Colors */
+        :root {
+            --bg-deep-navy: #0a192f;
+            --brand-light-blue: #b9e2f5; /* Matching your brochure background */
+            --brand-deep-blue: #003366;  /* Matching your brochure text */
+            --accent-orange: #f59e0b;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-deep-navy); 
+            color: white; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            text-align: center; 
+        }
+
+        .container { 
+            border: 2px solid var(--brand-light-blue); 
+            padding: 3rem; 
+            border-radius: 20px; 
+            background: #ffffff; /* White container like your profile card */
+            color: var(--brand-deep-blue);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
+            max-width: 500px; 
+        }
+        
+        .logo-container { margin-bottom: 1rem; }
+        .logo-container img { 
+            max-width: 150px; 
+            height: auto; 
+            drop-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        h1 { color: var(--brand-deep-blue); margin-bottom: 0.2rem; font-size: 2rem; font-weight: 800; }
+        .tagline { color: var(--brand-deep-blue); font-size: 1rem; margin-bottom: 2rem; font-weight: 600; opacity: 0.8; }
+
+        .maintenance-box { 
+            margin: 1.5rem 0; 
+            padding: 1.2rem; 
+            border-left: 5px solid var(--accent-orange); 
+            background: rgba(245, 158, 11, 0.05); 
+            border-radius: 8px; 
+            text-align: left; 
+        }
+
+        .maintenance-title { 
+            color: var(--accent-orange); 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-bottom: 8px; 
+            display: flex; 
+            align-items: center; 
+        }
+
+        .pulse { 
+            height: 12px; width: 12px; 
+            background-color: var(--accent-orange); 
+            border-radius: 50%; 
+            display: inline-block; 
+            margin-right: 12px; 
+            animation: pulse-animation 2s infinite; 
+        }
+
+        @keyframes pulse-animation { 0% { transform: scale(0.95); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.5; } 100% { transform: scale(0.95); opacity: 1; } }
+
+        .services { margin-top: 1.5rem; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .tag { 
+            background: var(--brand-light-blue); 
+            color: var(--brand-deep-blue);
+            padding: 6px 14px; 
+            border-radius: 6px; 
+            font-size: 0.75rem; 
+            font-weight: bold;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .footer { margin-top: 2.5rem; font-size: 0.85rem; color: #64748b; font-weight: 500; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>JK Tech Scope</h1>
-        <p>Professional IT Support & Infrastructure Solutions</p>
+        <div class="logo-container">
+            <img src="logo.png" alt="JK Tech Scope Logo">
+        </div>
+
+        <h1>JK TECHSCOPE</h1>
+        <div class="tagline">Shaping Your Digital Future</div>
         
         <div class="maintenance-box">
             <div class="maintenance-title"><span class="pulse"></span>System Update in Progress</div>
-            <p style="font-size: 0.95rem; margin: 0;">We are currently configuring our secure mail servers and infrastructure. The full JK Tech Scope experience will be online shortly.</p>
+            <p style="font-size: 0.9rem; margin: 0; color: #475569;">Our infrastructure team is currently finalizing server migrations. We'll be fully operational shortly.</p>
         </div>
 
         <div class="services">
-            <span class="tag">Server Management</span>
-            <span class="tag">IT Support</span>
-            <span class="tag">Network Security</span>
-            <span class="tag">Cloud Solutions</span>
+            <span class="tag">SERVER MANAGEMENT</span>
+            <span class="tag">IT SUPPORT</span>
+            <span class="tag">NETWORK SECURITY</span>
+            <span class="tag">CLOUD SOLUTIONS</span>
         </div>
+        
         <div class="footer">
             Managed by Julan Kavindu | jktechscope.lk &copy; 2026
         </div>
-    </div>
-</body>
-</html>
