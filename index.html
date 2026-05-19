@@ -1,117 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JK Tech Scope | Professional IT Solutions</title>
-    <style>
-        /* Updated to match Corporate Profile Colors */
-        :root {
-            --bg-deep-navy: #0a192f;
-            --brand-light-blue: #b9e2f5; /* Matching your brochure background */
-            --brand-deep-blue: #003366;  /* Matching your brochure text */
-            --accent-orange: #f59e0b;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JK Techscope Solutions | Enterprise Cloud & Systems Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#020617',
+            brandPanel: '#090d1f',
+          }
         }
-
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: var(--bg-deep-navy); 
-            color: white; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            text-align: center; 
-        }
-
-        .container { 
-            border: 2px solid var(--brand-light-blue); 
-            padding: 3rem; 
-            border-radius: 20px; 
-            background: #ffffff; /* White container like your profile card */
-            color: var(--brand-deep-blue);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
-            max-width: 500px; 
-        }
-        
-        .logo-container { margin-bottom: 1rem; }
-        .logo-container img { 
-            max-width: 150px; 
-            height: auto; 
-            drop-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        h1 { color: var(--brand-deep-blue); margin-bottom: 0.2rem; font-size: 2rem; font-weight: 800; }
-        .tagline { color: var(--brand-deep-blue); font-size: 1rem; margin-bottom: 2rem; font-weight: 600; opacity: 0.8; }
-
-        .maintenance-box { 
-            margin: 1.5rem 0; 
-            padding: 1.2rem; 
-            border-left: 5px solid var(--accent-orange); 
-            background: rgba(245, 158, 11, 0.05); 
-            border-radius: 8px; 
-            text-align: left; 
-        }
-
-        .maintenance-title { 
-            color: var(--accent-orange); 
-            font-weight: bold; 
-            font-size: 0.85rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 8px; 
-            display: flex; 
-            align-items: center; 
-        }
-
-        .pulse { 
-            height: 12px; width: 12px; 
-            background-color: var(--accent-orange); 
-            border-radius: 50%; 
-            display: inline-block; 
-            margin-right: 12px; 
-            animation: pulse-animation 2s infinite; 
-        }
-
-        @keyframes pulse-animation { 0% { transform: scale(0.95); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.5; } 100% { transform: scale(0.95); opacity: 1; } }
-
-        .services { margin-top: 1.5rem; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .tag { 
-            background: var(--brand-light-blue); 
-            color: var(--brand-deep-blue);
-            padding: 6px 14px; 
-            border-radius: 6px; 
-            font-size: 0.75rem; 
-            font-weight: bold;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .footer { margin-top: 2.5rem; font-size: 0.85rem; color: #64748b; font-weight: 500; }
-    </style>
+      }
+    }
+  </script>
 </head>
-<body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="JK Tech Scope Logo">
-        </div>
+<body class="bg-brandDark text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-        <h1>JK TECHSCOPE</h1>
-        <div class="tagline">Shaping Your Digital Future</div>
-        
-        <div class="maintenance-box">
-            <div class="maintenance-title"><span class="pulse"></span>System Update in Progress</div>
-            <p style="font-size: 0.9rem; margin: 0; color: #475569;">Our infrastructure team is currently finalizing server migrations. We'll be fully operational shortly.</p>
-        </div>
+  <nav class="border-b border-slate-900 bg-brandDark/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+        JK TECHSCOPE
+      </span>
+      <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+        <a href="#services" class="hover:text-blue-400 transition">Services</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        <a href="mailto:julan@jktechscope.lk" class="font-semibold text-blue-500 hover:text-blue-400 transition">Email Us &rarr;</a>
+      </div>
+    </div>
+  </nav>
 
-        <div class="services">
-            <span class="tag">SERVER MANAGEMENT</span>
-            <span class="tag">IT SUPPORT</span>
-            <span class="tag">NETWORK SECURITY</span>
-            <span class="tag">CLOUD SOLUTIONS</span>
-        </div>
+  <header class="relative max-w-5xl mx-auto pt-24 pb-20 px-6 text-center z-10">
+    <div class="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full -z-10 max-w-3xl mx-auto"></div>
+    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-blue-500/20 uppercase">
+      Next-Gen Infrastructure & Software Engineering
+    </span>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-6 leading-[1.15]">
+      Shaping Your Digital Future With <br />
+      <span class="text-blue-400">Enterprise Cloud Solutions</span>
+    </h1>
+    <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+      We design, build, and deploy high-performance containerized software architectures, custom billing POS networks, and robust Linux infrastructure tailored to scale your enterprise operations.
+    </p>
+    <div class="mt-10">
+      <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition text-center text-sm">
+        Launch Your Project
+      </a>
+    </div>
+  </header>
+
+  <section id="services" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-900">
+    <div class="text-center md:text-left mb-16">
+      <h2 class="text-xs uppercase text-blue-400 font-bold tracking-widest">Our Operations Matrix</h2>
+      <p class="text-3xl font-black tracking-tight mt-2 text-white">Engineered for Scalability and Speed</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
+        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">🌐</div>
+        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Server Management</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Linux system administration, LVM storage scaling, kernel tuning, and high-availability virtualization setups.</p>
+      </div>
+
+      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
+        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">☁️</div>
+        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Cloud Solutions</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Custom web architectures, secure relational databases, and automated ERP/POS system deployments.</p>
+      </div>
+
+      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
+        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">🛡️</div>
+        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Network Security</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Aggressive firewall filtering, secure remote tunnels, infrastructure hardening, and access controls.</p>
+      </div>
+
+      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
+        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">⚙️</div>
+        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">IT Support Automation</h3>
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Transitioning legacy manual company operations into high-speed digital engines with automated transaction logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-900">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <div>
+        <h2 class="text-xs uppercase text-blue-400 font-bold tracking-widest">Ready to Build?</h2>
+        <p class="text-3xl font-black tracking-tight mt-2 text-white">Let's Discuss Your System Requirements</p>
+        <p class="text-slate-400 text-sm mt-4 leading-relaxed max-w-md">
+          Whether you need a custom billing engine for an office client, robust database setups, or remote server migrations, let us know your requirements. We engineer stable systems built to scale.
+        </p>
         
-        <div class="footer">
-            Managed by Julan Kavindu | jktechscope.lk &copy; 2026
+        <div class="mt-8 space-y-3">
+          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
+            <span class="text-blue-500 font-bold">✓</span> <span>Direct System Architect Consultation</span>
+          </div>
+          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
+            <span class="text-blue-500 font-bold">✓</span> <span>Fully Clean & Documented Source Repositories</span>
+          </div>
+          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
+            <span class="text-blue-500 font-bold">✓</span> <span>Automated Cloud Redundancy Schemes</span>
+          </div>
         </div>
+      </div>
+
+      <div class="bg-brandPanel border border-slate-900 p-8 rounded-2xl shadow-xl">
+        <form class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Your Name / Organization</label>
+            <input type="text" placeholder="Enter your name" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono">
+          </div>
+          
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Email Address</label>
+            <input type="email" placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Project Classification</label>
+            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-400 focus:outline-none focus:border-blue-500 transition font-mono">
+              <option>Custom POS / Billing Systems</option>
+              <option>Linux Server Management</option>
+              <option>Network Infrastructure Hardening</option>
+              <option>Cloud Architecture Planning</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Brief Project Overview</label>
+            <textarea rows="4" placeholder="Describe the application features or system scope..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono resize-none"></textarea>
+          </div>
+
+          <button type="button" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-600/10 transition text-sm">
+            Submit Technical Request &rarr;
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-900 bg-brandDark py-12 text-center text-xs text-slate-500">
+    <p>&copy; 2026 JK Techscope Solutions. All Infrastructure Rights Reserved.</p>
+    <p class="mt-2 text-slate-600">Managed by Julan Kavindu | jktechscope.lk</p>
+  </footer>
+
+</body>
+</html>
