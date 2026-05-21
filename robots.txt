@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Host mapping
+Host: https://jktechscope.lk
+Sitemap: https://jktechscope.lk/sitemap.xml
