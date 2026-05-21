@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Requirement Gathering Portal | JK Techscope</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#020617',
+            brandPanel: '#0f172a',
+          }
+        }
+      }
+    }
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <style>
+    @keyframes grid-travel {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 50px 50px, 50px 50px; }
+    }
+    .cyber-portal-live {
+      background-size: 50px 50px, 50px 50px !important;
+      background-image: linear-gradient(to right, rgba(15, 23, 42, 0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(15, 23, 42, 0.12) 1px, transparent 1px) !important;
+      animation: grid-travel 10s linear infinite !important;
+    }
+    html.dark .cyber-portal-live {
+      background-image: linear-gradient(to right, rgba(59, 130, 246, 0.22) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.22) 1px, transparent 1px) !important;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-brandDark cyber-portal-live text-zinc-900 dark:text-slate-100 font-sans antialiased min-h-screen py-16 px-6 relative">
+
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-blue-500/20 to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <div class="text-center mb-16 select-none">
+      <span class="text-sm font-mono tracking-widest text-blue-600 dark:text-blue-400 font-bold uppercase border-b-2 border-blue-500/20 pb-2">JK Techscope Enterprise Engine</span>
+      <h1 class="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tight mt-5">System Requirements Matrix</h1>
+      <p class="text-zinc-600 dark:text-slate-400 text-base max-w-2xl mx-auto mt-4 leading-relaxed">Configure your structural variables below to compile an instantaneous baseline architecture quotation package.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <div class="lg:col-span-7 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 p-8 md:p-10 rounded-3xl shadow-2xl backdrop-blur-md">
+        <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-8">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Organization Identity</label>
+              <input type="text" name="company_name" required placeholder="e.g., Company Ltd" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)]">
+            </div>
+            <div>
+              <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Requester Name</label>
+              <input type="text" name="requester_name" required placeholder="Your full name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)]">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Business Email</label>
+              <input type="email" name="email" required placeholder="name@company.com" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)]">
+            </div>
+            <div>
+              <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Industry Classification</label>
+              <select name="industry_type" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)] cursor-pointer select-none">
+                <option value="Fintech / Banking" class="bg-white dark:bg-brandPanel">Fintech & Banking Operations</option>
+                <option value="Retail / Logistics" class="bg-white dark:bg-brandPanel">Retail & Logistics POS Networks</option>
+                <option value="Healthcare Systems" class="bg-white dark:bg-brandPanel">Healthcare & Clinic Databases</option>
+                <option value="Government Infrastructure" class="bg-white dark:bg-brandPanel">Government Systems Infrastructure</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Total Employee Infrastructure Count (Scale Modifier)</label>
+            <select id="employee-capacity-scalar" name="employee_capacity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)] cursor-pointer select-none">
+              <option value="Micro Team (1-10)" data-multiply="1.0" class="bg-white dark:bg-brandPanel">Micro Team Layer (1 - 10 nodes / No added licensing cost)</option>
+              <option value="Midscale Cluster (11-50)" data-multiply="1.2" class="bg-white dark:bg-brandPanel">Midscale Cluster Core (11 - 50 nodes / +20% overhead scale)</option>
+              <option value="Enterprise Cluster (51-200)" data-multiply="1.5" class="bg-white dark:bg-brandPanel">Enterprise Cluster Node (51 - 200 nodes / +50% overhead scale)</option>
+              <option value="Datacenter Network (201+)" data-multiply="2.0" class="bg-white dark:bg-brandPanel">High-Availability Datacenter (201+ nodes / Double scale complexity)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Select Core Architecture Tier</label>
+            <select id="architecture-blueprint-base" name="architecture_blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-5 text-base md:text-lg text-zinc-900 dark:text-white rounded-2xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none transition-all duration-300 transform-gpu font-mono focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:rounded-xl focus:scale-[1.02] focus:shadow-[0_0_30px_rgba(59,130,246,0.35)] cursor-pointer select-none">
+              <option value="Linux Server Infrastructure Setup" data-base="300" class="bg-white dark:bg-brandPanel">Infrastructure Tier: Linux Server Setup & Deployment ($300 base/mo)</option>
+              <option value="CloudPOS Systems Engineering" data-base="450" class="bg-white dark:bg-brandPanel">Software Engineering Tier: Custom CloudPOS Systems ($450 base/mo)</option>
+              <option value="Network Infrastructure Hardening" data-base="600" class="bg-white dark:bg-brandPanel">Security Hardening Tier: Firewalls, SIEM & Routing ($600 base/mo)</option>
+              <option value="Full Architecture Suite Integration" data-base="950" class="bg-white dark:bg-brandPanel">Full-Stack Automation Suite: Total Platform Cluster ($950 base/mo)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs md:text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-4">Add Specialized Operational Blocks</label>
+            <div class="space-y-6 max-h-[340px] overflow-y-auto p-6 bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 rounded-2xl font-mono text-sm text-zinc-700 dark:text-slate-300 shadow-inner">
+              
+              <div class="space-y-3">
+                <p class="font-sans font-black text-blue-500 uppercase tracking-widest text-xs">Infrastructure & Cloud Nodes</p>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="80" class="service-addon-check form-checkbox h-5 w-5 text-blue-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Enterprise Servers Support (+$80)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="65" class="service-addon-check form-checkbox h-5 w-5 text-blue-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>VPS & Storage Solutions (+$65)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="40" class="service-addon-check form-checkbox h-5 w-5 text-blue-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Web Hosting Security (+$40)</span></label>
+              </div>
+              
+              <div class="space-y-3 pt-4 border-t border-zinc-200 dark:border-slate-800/60">
+                <p class="font-sans font-black text-indigo-500 uppercase tracking-widest text-xs">Network & Security Protocols</p>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="120" class="service-addon-check form-checkbox h-5 w-5 text-indigo-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Firewalls & Endpoint Security (+$120)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="150" class="service-addon-check form-checkbox h-5 w-5 text-indigo-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>SIEM & SOC Live Monitoring (+$150)</span></label>
+              </div>
+              
+              <div class="space-y-3 pt-4 border-t border-zinc-200 dark:border-slate-800/60">
+                <p class="font-sans font-black text-emerald-500 uppercase tracking-widest text-xs">Visual Intelligence Matrix</p>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>AI-Powered CCTV Systems (+$180)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="110" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Biometric Access Control (+$110)</span></label>
+              </div>
+
+              /*this for add branding tab*/
+              <div class="space-y-3 pt-4 border-t border-zinc-200 dark:border-slate-800/60">
+                <p class="font-sans font-black text-emerald-500 uppercase tracking-widest text-xs">Branding & Growth</p>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Corporate Branding & ID (+$180)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Social Media Management (+$180)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Strategic Campaigns (+$180)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>Creative Artwork Design (+$180)</span></label>
+                <label class="flex items-center space-x-4 cursor-pointer py-2 px-3 rounded-xl hover:bg-zinc-200/50 dark:hover:bg-slate-900/60 hover:scale-[1.01] transition-all duration-200 text-base font-bold"><input type="checkbox" data-addon="180" class="service-addon-check form-checkbox h-5 w-5 text-emerald-600 rounded bg-transparent border-zinc-400 dark:border-slate-700 focus:ring-0"><span>SEO & Local Visibility (+$180)</span></label>
+
+
+                
+
+                
+
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <input type="hidden" id="hidden-price-input" name="estimated_price" value="$300/mo">
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-5 rounded-xl shadow-xl shadow-blue-600/20 text-base hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 transform-gpu">Transmit Formal Requirements &rarr;</button>
+        </form>
+      </div>
+
+      <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
+        <div class="p-8 bg-blue-600/5 dark:bg-blue-500/5 border-2 border-blue-500/20 rounded-3xl shadow-xl backdrop-blur-sm">
+          <p class="text-sm uppercase font-mono tracking-wider text-zinc-500 dark:text-slate-400 font-black">Calculated Operational Price Matrix</p>
+          <p class="text-6xl font-mono font-black text-blue-600 dark:text-blue-400 mt-5 tracking-tight">$<span id="quote-value">300</span><span class="text-2xl font-sans font-bold text-zinc-500 dark:text-slate-400">/mo</span></p>
+          <div class="border-t border-blue-500/10 mt-8 pt-6 text-sm text-zinc-500 dark:text-slate-400 space-y-3 leading-relaxed font-medium">
+            <p class="flex items-center"><span class="text-blue-500 mr-2 text-lg">▪</span> Multi-variable node scaling factors apply instantly.</p>
+            <p class="flex items-center"><span class="text-blue-500 mr-2 text-lg">▪</span> Formal estimates are routed via Webhooks directly to infrastructure dispatchers.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const baseDropdown = document.getElementById('architecture-blueprint-base');
+    const scalarDropdown = document.getElementById('employee-capacity-scalar');
+    const checkboxes = document.querySelectorAll('.service-addon-check');
+    const display = document.getElementById('quote-value');
+    const hiddenInput = document.getElementById('hidden-price-input');
+
+    function calculate() {
+      const base = parseInt(baseDropdown.options[baseDropdown.selectedIndex].getAttribute('data-base'));
+      const multiply = parseFloat(scalarDropdown.options[scalarDropdown.selectedIndex].getAttribute('data-multiply'));
+      
+      let addons = 0;
+      checkboxes.forEach(cb => { if (cb.checked) addons += parseInt(cb.getAttribute('data-addon')); });
+
+      const finalPrice = Math.round((base * multiply) + addons);
+      display.textContent = finalPrice;
+      hiddenInput.value = `$${finalPrice}/mo`;
+    }
+
+    baseDropdown.addEventListener('change', calculate);
+    scalarDropdown.addEventListener('change', calculate);
+    checkboxes.forEach(cb => cb.addEventListener('change', calculate));
+  </script>
+</body>
+</html>
