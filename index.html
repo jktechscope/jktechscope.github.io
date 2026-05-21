@@ -51,7 +51,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* SOLID DEPLOYMENT FIX: The background canvas now sits on its own hardware-isolated compositor layer */
     .cyber-artwork-live::before {
       content: "";
       position: fixed;
@@ -71,7 +70,6 @@
         linear-gradient(to bottom, rgba(59, 130, 246, 0.16) 1px, transparent 1px) !important;
     }
 
-    /* HIGH-PERFORMANCE MEDIA INTERRUPT: Only activate continuous CSS calculations on desktop screens to protect mobile CPU scores */
     @media (min-width: 1024px) {
       .cyber-artwork-live::before {
         background-size: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px !important;
@@ -99,7 +97,7 @@
     }
   </style>
 </head>
-<body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden pb-16">
+<body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-950 dark:text-zinc-50 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden pb-16">
 
   <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-blue-500/15 to-transparent dark:from-blue-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
   <div class="live-glow-core absolute top-0 left-1/2 w-full max-w-7xl h-[800px] bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent dark:from-blue-500/35 dark:via-purple-500/15 dark:to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
@@ -113,19 +111,6 @@
     </a>
   </div>
 
-  <div id="undo-toast-banner" class="fixed top-28 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg p-4 bg-zinc-950/95 border-2 border-red-500/40 shadow-[0_0_30px_rgba(239,68,68,0.25)] rounded-2xl flex items-center justify-between transition-all duration-500 ease-out transform translate-y-[-150%] opacity-0 backdrop-blur-md font-mono text-sm pointer-events-none">
-    <div class="flex items-center space-x-3 text-zinc-200">
-      <span class="text-xl animate-pulse">⚠️</span>
-      <div>
-        <p class="font-bold text-zinc-100" id="undo-toast-title">Ecosystem Node Dropped</p>
-        <p class="text-xs text-zinc-400" id="undo-toast-subtitle">Changes will finalize in <span id="undo-timer-count" class="text-red-400 font-bold">15</span>s...</p>
-      </div>
-    </div>
-    <button onclick="executeEmergencyUndoOperation()" class="bg-blue-600 hover:bg-blue-500 text-white font-black px-4 py-2 rounded-xl text-xs uppercase shadow-md transition-all duration-300 hover:scale-105 active:scale-95">
-      ↩️ Undo Action
-    </button>
-  </div>
-
   <nav class="relative z-40 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
     <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/30 via-indigo-500/80 to-purple-500/30 dark:from-blue-500/50 dark:via-blue-400 dark:to-indigo-500/50"></div>
     <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -133,16 +118,16 @@
         <img src="favicon.png" alt="JK Techscope Logo" class="w-12 h-12 object-contain rounded-xl shadow-md border border-zinc-300/30 dark:border-slate-700/50 group-hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high">
         <div class="flex flex-col">
           <span class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-blue-400 dark:via-indigo-400 dark:to-blue-400 bg-[length:200%_auto]">JK TECHSCOPE</span>
-          <span class="text-xs font-mono tracking-widest text-zinc-500 dark:text-slate-400 uppercase font-bold -mt-0.5">Solutions Matrix</span>
+          <span class="text-xs font-mono tracking-widest text-zinc-500 dark:text-slate-300 uppercase font-bold -mt-0.5">Solutions Matrix</span>
         </div>
       </a>
       <div class="flex items-center space-x-8">
         <div class="hidden md:flex items-center space-x-4 text-sm font-bold uppercase tracking-wider">
-          <a href="#services" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Services</a>
-          <a href="#projects" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Projects</a>
-          <a href="#testimonials" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Feedback</a>
-          <button onclick="openQuoteModal()" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300 uppercase font-bold tracking-wider">Quotation Engine</button>
-          <span id="active-role-badge" class="px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold tracking-wide border border-zinc-300/40 dark:border-slate-700/40 text-blue-400">Role: Visitor</span>
+          <a href="#services" class="px-5 py-3 text-zinc-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Services</a>
+          <a href="#projects" class="px-5 py-3 text-zinc-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Projects</a>
+          <a href="#testimonials" class="px-5 py-3 text-zinc-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Feedback</a>
+          <button onclick="openQuoteModal()" class="px-5 py-3 text-zinc-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300 uppercase font-bold tracking-wider">Quotation Engine</button>
+          <span id="active-role-badge" class="px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold tracking-wide border border-zinc-300/40 dark:border-slate-700/40 text-blue-600 dark:text-blue-400">Role: Visitor</span>
         </div>
         <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition" aria-label="Toggle structural theme">
           <svg id="theme-toggle-sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 7a3 3 0 100 6 3 3 0 000-6zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 11-2 0V3a1 1 0 011-1zm4 2a1 1 0 01.707.293l.707.707a1 1 0 11-1.414 1.414l-.707-.707A1 1 0 0114 4zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zm11.707-4.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM16 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-1.707 4.707a1 1 0 00-1.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 16a1 1 0 11-2 0v-1a1 1 0 11-2 0v1zm-4.293-2.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
@@ -153,89 +138,93 @@
   </nav>
 
   <main class="relative z-10">
-    
     <header class="relative max-w-5xl mx-auto pt-24 pb-12 px-6 text-center select-none">
-      <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-700 dark:text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
-      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white mt-6 leading-[1.15]">Shaping Your Digital Future With <br><span class="text-blue-600 dark:text-blue-400">Enterprise Cloud Solutions</span></h1>
-      <p class="text-zinc-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure.</p>
+      <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-800 dark:text-blue-400 desert-text text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white mt-6 leading-[1.15]">Shaping Your Digital Future With <br><span class="text-blue-700 dark:text-blue-400">Enterprise Cloud Solutions</span></h1>
+      <p class="text-zinc-700 dark:text-slate-300 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-medium">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure.</p>
     </header>
 
     <section class="max-w-5xl mx-auto px-6 pb-20">
-      <div class="relative w-full aspect-video rounded-3xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 bg-black shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all duration-300 transform-gpu cursor-pointer">
+      <div class="relative w-full aspect-video rounded-3xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 bg-black shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all duration-300 transform-gpu cursor-pointer">
         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/zDAYZU4A3w0?autoplay=0&mute=1&loop=1&playlist=zDAYZU4A3w0" title="JK Techscope Infrastructure Operations Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
     </section>
 
-    <section id="services" class="max-w-[95rem] mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+    <section id="services" class="max-w-[95rem] mx-auto px-6 py-20 border-t border-zinc-300 dark:border-slate-800">
       <div class="mb-16 select-none max-w-max">
-        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Our Operations Matrix</h2>
+        <h2 class="text-xs uppercase text-zinc-600 dark:text-blue-400 font-black tracking-widest">Our Operations Matrix</h2>
         <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Engineered for Scalability and Speed</p>
       </div>
-
       <div id="cms-service-grid-root" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-7xl xl:grid-cols-5 gap-6 mx-auto">
         </div>
     </section>
 
-    <section id="projects" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-300 dark:border-slate-800">
       <div class="mb-16 select-none max-w-max">
-        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Enterprise Case Studies</h2>
+        <h2 class="text-xs uppercase text-zinc-600 dark:text-blue-400 font-black tracking-widest">Enterprise Case Studies</h2>
         <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Deployed Architectures & Implementations</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-blue-500 transition-all duration-300">
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-blue-500 transition-all duration-300">
           <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80" alt="Server Operations" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500" loading="lazy">
           <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
             <span class="text-xs font-mono font-bold text-blue-400 uppercase">Infrastructure hardening</span>
-            <h4 class="text-lg font-black text-white mt-1">Linux Server Array Migration</h4>
+            <h3 class="text-lg font-black text-white mt-1">Linux Server Array Migration</h3>
           </div>
         </div>
-        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-indigo-500 transition-all duration-300">
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-indigo-500 transition-all duration-300">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Cloud Network Dashboard" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500" loading="lazy">
           <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
             <span class="text-xs font-mono font-bold text-indigo-400 uppercase">Cloud Software Deployment</span>
-            <h4 class="text-lg font-black text-white mt-1">Automated Custom POS Backend</h4>
+            <h3 class="text-lg font-black text-white mt-1">Automated Custom POS Backend</h3>
           </div>
         </div>
-        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-emerald-500 transition-all duration-300">
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-emerald-500 transition-all duration-300">
           <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Enterprise Platform Architecture" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500" loading="lazy">
           <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
             <span class="text-xs font-mono font-bold text-emerald-400 uppercase">Database Architecture</span>
-            <h4 class="text-lg font-black text-white mt-1">High-Availability ERP Routing</h4>
+            <h3 class="text-lg font-black text-white mt-1">High-Availability ERP Routing</h3>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+    <section id="testimonials" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-300 dark:border-slate-800">
       <div class="mb-16 select-none max-w-max">
-        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Client Testimonials</h2>
+        <h2 class="text-xs uppercase text-zinc-600 dark:text-blue-400 font-black tracking-widest">Client Testimonials</h2>
         <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Validated Infrastructure Feedback</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-7 space-y-6">
-          <div class="p-8 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-2xl shadow-lg backdrop-blur-md hover:border-blue-500 transition-all duration-300">
-            <p class="text-zinc-600 dark:text-slate-300 text-base italic leading-relaxed">
+          <div class="p-8 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-300 dark:border-slate-800 rounded-2xl shadow-lg backdrop-blur-md hover:border-blue-500 transition-all duration-300">
+            <p class="text-zinc-800 dark:text-slate-200 text-base italic leading-relaxed font-medium">
               "JK Techscope completely refactored our retail POS network setup. The automation cluster eliminated our transaction latency over cloud routing tables instantly. Five-star engineering support!"
             </p>
-            <div class="mt-6 flex items-center space-x-3 border-t border-zinc-200 dark:border-slate-800 pt-4 font-mono select-none">
-              <div class="w-10 h-10 bg-blue-600/10 text-blue-500 font-black rounded-lg flex items-center justify-center border border-blue-500/20">CT</div>
-              <div><p class="text-sm font-black text-zinc-900 dark:text-white">Chief Technology Director</p><p class="text-xs text-zinc-400 dark:text-slate-500 font-bold uppercase">Logistics Retail Array</p></div>
+            <div class="mt-6 flex items-center space-x-3 border-t border-zinc-300 dark:border-slate-800 pt-4 font-mono select-none">
+              <div class="w-10 h-10 bg-blue-600/10 text-blue-700 dark:text-blue-400 font-black rounded-lg flex items-center justify-center border border-blue-500/20">CT</div>
+              <div><p class="text-sm font-black text-zinc-900 dark:text-white">Chief Technology Director</p><p class="text-xs text-zinc-500 dark:text-slate-400 font-bold uppercase">Logistics Retail Array</p></div>
             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-5 bg-white/90 dark:bg-brandPanel/90 border-2 border-zinc-200 dark:border-slate-800 p-6 md:p-8 rounded-2xl shadow-xl backdrop-blur-md">
+        <div class="lg:col-span-5 bg-white/90 dark:bg-brandPanel/90 border-2 border-zinc-300 dark:border-slate-800 p-6 md:p-8 rounded-2xl shadow-xl backdrop-blur-md">
           <h3 class="text-lg font-black text-zinc-900 dark:text-white tracking-tight mb-2">Submit Systems Feedback</h3>
           <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-4">
-            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-client-title">Client Designation</label>
-            <input type="text" name="client_title" aria-labelledby="label-client-title" required placeholder="e.g., Systems Engineer" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            <div>
+              <label class="block text-xs font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="label-client-title">Client Designation</label>
+              <input type="text" name="client_title" aria-labelledby="label-client-title" required placeholder="e.g., Systems Engineer" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-500 focus:border-blue-500 transition font-mono">
+            </div>
             
-            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-company-context">Corporate Entity Environment</label>
-            <input type="text" name="company_context" aria-labelledby="label-company-context" required placeholder="Corporate Context" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            <div>
+              <label class="block text-xs font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="label-company-context">Corporate Entity Environment</label>
+              <input type="text" name="company_context" aria-labelledby="label-company-context" required placeholder="Corporate Context" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-500 focus:border-blue-500 transition font-mono">
+            </div>
             
-            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-feedback-message">Project Review Notes</label>
-            <textarea name="feedback_message" aria-labelledby="label-feedback-message" required rows="3" placeholder="Operational statement details..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono resize-none"></textarea>
+            <div>
+              <label class="block text-xs font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="label-feedback-message">Project Review Notes</label>
+              <textarea name="feedback_message" aria-labelledby="label-feedback-message" required rows="3" placeholder="Operational statement details..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-500 focus:border-blue-500 transition font-mono resize-none"></textarea>
+            </div>
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl shadow-lg text-xs uppercase tracking-wider">Transmit Log &rarr;</button>
           </form>
@@ -243,20 +232,20 @@
       </div>
     </section>
 
-    <section id="quotation" class="max-w-4xl mx-auto px-6 py-24 border-t border-zinc-200 dark:border-slate-800 text-center">
-      <div class="p-12 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl shadow-xl backdrop-blur-md hover:border-blue-500 transition-all duration-300">
+    <section id="quotation" class="max-w-4xl mx-auto px-6 py-24 border-t border-zinc-300 dark:border-slate-800 text-center">
+      <div class="p-12 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-300 dark:border-slate-800 rounded-3xl shadow-xl backdrop-blur-md hover:border-blue-500 transition-all duration-300">
         <h2 class="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">Get a Quotation</h2>
-        <p class="text-zinc-600 dark:text-slate-400 text-base max-w-xl mx-auto mt-4 leading-relaxed">Configure variables instantly inside our clean on-page processing wizard overlay loop.</p>
+        <p class="text-zinc-700 dark:text-slate-300 text-base max-w-xl mx-auto mt-4 leading-relaxed font-medium">Configure variables instantly inside our clean on-page processing wizard overlay loop.</p>
         <div class="mt-8"><button onclick="openQuoteModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition text-sm">Launch Requirement Gathering Engine &rarr;</button></div>
       </div>
     </section>
   </main>
 
   <div id="quote-modal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-gradient-to-br from-slate-950/80 via-blue-950/80 to-slate-950/80 dark:from-blue-950/80 dark:via-purple-950/80 dark:to-indigo-950/80 live-color-pulse-bg backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 transition-all duration-500 opacity-0 transform-gpu">
-    <div class="relative w-full max-w-6xl bg-white dark:bg-brandPanel border-2 border-zinc-200 dark:border-slate-800/90 rounded-3xl shadow-[0_0_60px_rgba(59,130,246,0.22)] overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
-      <div class="p-6 border-b border-zinc-200 dark:border-slate-800 flex justify-between items-center bg-zinc-50 dark:bg-slate-950/40">
-        <div class="flex items-center space-x-3"><img src="favicon.png" alt="JK Logo" class="w-8 h-8 object-contain rounded-lg"><p class="text-sm font-mono tracking-wider text-blue-600 dark:text-blue-400 font-black uppercase">System Requirements Matrix Terminal</p></div>
-        <button onclick="closeQuoteModal()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-200/50 dark:bg-slate-800/60 p-2 rounded-xl font-bold text-sm px-4">✕ Close</button>
+    <div class="relative w-full max-w-6xl bg-white dark:bg-brandPanel border-2 border-zinc-300 dark:border-slate-800/90 rounded-3xl shadow-[0_0_60px_rgba(59,130,246,0.22)] overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
+      <div class="p-6 border-b border-zinc-300 dark:border-slate-800 flex justify-between items-center bg-zinc-50 dark:bg-slate-950/40">
+        <div class="flex items-center space-x-3"><img src="favicon.png" alt="JK Logo" class="w-8 h-8 object-contain rounded-lg"><h2 class="text-sm font-mono tracking-wider text-blue-700 dark:text-blue-400 font-black uppercase">System Requirements Matrix Terminal</h2></div>
+        <button onclick="closeQuoteModal()" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-white bg-zinc-200/50 dark:bg-slate-800/60 p-2 rounded-xl font-bold text-sm px-4">✕ Close</button>
       </div>
       <div class="overflow-y-auto p-8 md:p-10 space-y-8 flex-1">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -264,30 +253,30 @@
             <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-org">Organization Identity</label>
-                  <input type="text" id="feedback-company" aria-labelledby="modal-lbl-org" placeholder="Organization Identity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                  <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="modal-lbl-org">Organization Identity</label>
+                  <input type="text" id="feedback-company" aria-labelledby="modal-lbl-org" placeholder="Organization Identity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/70 outline-none focus:border-blue-500 transition font-mono">
                 </div>
                 <div>
-                  <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-name">Requester Name</label>
-                  <input type="text" id="feedback-name" aria-labelledby="modal-lbl-name" placeholder="Requester Full Name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                  <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="modal-lbl-name">Requester Name</label>
+                  <input type="text" id="feedback-name" aria-labelledby="modal-lbl-name" placeholder="Requester Full Name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/70 outline-none focus:border-blue-500 transition font-mono">
                 </div>
               </div>
               <div>
-                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-email">Corporate Mail Channel</label>
-                <input type="email" id="feedback-email" aria-labelledby="modal-lbl-email" placeholder="Business Email" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="modal-lbl-email">Corporate Mail Channel</label>
+                <input type="email" id="feedback-email" aria-labelledby="modal-lbl-email" placeholder="Business Email" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/70 outline-none focus:border-blue-500 transition font-mono">
               </div>
               <div>
-                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-scalar">Workforce Vector Scope</label>
-                <select id="modal-employee-scalar" aria-labelledby="modal-lbl-scalar" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Micro Team" data-multiply="1.0">Micro Team Layer (1 - 10 nodes)</option><option value="Enterprise Cluster" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50%)</option></select>
+                <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="modal-lbl-scalar">Workforce Vector Scope</label>
+                <select id="modal-employee-scalar" aria-labelledby="modal-lbl-scalar" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Micro Team" data-multiply="1.0">Micro Team Layer (1 - 10 nodes)</option><option value="Enterprise Cluster" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50%)</option></select>
               </div>
               <div>
-                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-blueprint">Architecture Base Framework</label>
-                <select id="modal-architecture-base" aria-labelledby="modal-lbl-blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Linux Server Setup" data-base="300">Linux Server Setup & Management ($300/mo)</option><option value="Custom CloudPOS" data-base="450">Custom CloudPOS Web Architecture ($450/mo)</option></select>
+                <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="modal-lbl-blueprint">Architecture Base Framework</label>
+                <select id="modal-architecture-base" aria-labelledby="modal-lbl-blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Linux Server Setup" data-base="300">Linux Server Setup & Management ($300/mo)</option><option value="Custom CloudPOS" data-base="450">Custom CloudPOS Web Architecture ($450/mo)</option></select>
               </div>
               <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg transition text-sm">Transmit Formal Requirements &rarr;</button>
             </form>
           </div>
-          <div class="lg:col-span-5"><div class="p-8 bg-blue-600/5 rounded-2xl border border-blue-500/20 shadow-xl"><p class="text-xs uppercase font-mono tracking-wider font-bold">Calculated Price Matrix</p><p class="text-6xl font-mono font-black text-blue-600 dark:text-blue-400 mt-4">$<span id="modal-quote-value">300</span><span class="text-xl font-sans font-semibold">/mo</span></p></div></div>
+          <div class="lg:col-span-5"><div class="p-8 bg-blue-600/5 rounded-2xl border border-blue-500/20 shadow-xl"><h3 class="text-xs uppercase font-mono tracking-wider font-bold text-zinc-700 dark:text-slate-300">Calculated Price Matrix</h3><p class="text-6xl font-mono font-black text-blue-700 dark:text-blue-400 mt-4">$<span id="modal-quote-value">300</span><span class="text-xl font-sans font-semibold text-zinc-500">/mo</span></p></div></div>
         </div>
       </div>
     </div>
@@ -296,24 +285,24 @@
   <div id="admin-portal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-brandDark/95 backdrop-blur-3xl flex items-center justify-center p-6 transition-all duration-300 opacity-0">
     <div class="w-full max-w-4xl bg-white dark:bg-brandPanel border-2 border-zinc-300 dark:border-slate-800 rounded-3xl shadow-2xl p-8 transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto relative">
       
-      <button onclick="closeAdminPortalModal()" class="absolute top-6 right-6 text-sm bg-zinc-100 dark:bg-slate-800 text-zinc-400 hover:text-white px-4 py-2 rounded-xl transition">✕ Exit Gate</button>
+      <button onclick="closeAdminPortalModal()" class="absolute top-6 right-6 text-sm bg-zinc-100 dark:bg-slate-800 text-zinc-500 hover:text-white px-4 py-2 rounded-xl transition">✕ Exit Gate</button>
       
       <div id="admin-auth-panel" class="max-w-md mx-auto py-8">
-        <h3 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h3>
+        <h2 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h2>
         <div class="space-y-4 mt-6">
-          <label class="block text-xs font-mono text-zinc-400 mb-1" id="lbl-admin-key">System Passkey String</label>
-          <input type="password" id="admin-key-input" aria-labelledby="lbl-admin-key" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
+          <label class="block text-xs font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="lbl-admin-key">System Passkey String</label>
+          <input type="password" id="admin-key-input" aria-labelledby="lbl-admin-key" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
           <button onclick="validateRoleAccessCredentials()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-lg transition text-sm font-mono tracking-widest uppercase">Authorize Access Tier &rarr;</button>
-          <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-600 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-200 dark:border-slate-800/80">
-            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Dynamic Delete)</p>
+          <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-400 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-300 dark:border-slate-800/80">
+            <p>🔑 Access Keys: <span class="text-amber-600 font-bold">manager123</span> (Read) | <span class="text-emerald-600 font-bold">admin123</span> (Full CRUD Injection, Deletion & Undo)</p>
           </div>
         </div>
       </div>
 
       <div id="admin-cms-hub" class="hidden space-y-8 py-4">
-        <div class="border-b border-zinc-200 dark:border-slate-800 pb-4 flex justify-between items-center">
+        <div class="border-b border-zinc-300 dark:border-slate-800 pb-4 flex justify-between items-center">
           <div>
-            <h4 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Core Architecture CMS Console Hub</h4>
+            <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Core Architecture CMS Console Hub</h3>
             <p class="text-xs text-zinc-500 dark:text-slate-400 mt-1">Direct memory manipulation layer. Add entire pillar blocks natively to your grid layout.</p>
           </div>
           <button onclick="logoutAdminPortalTier()" class="text-xs bg-red-600/10 text-red-400 border border-red-500/20 px-3 py-1.5 rounded-lg hover:bg-red-600 hover:text-white transition">Revoke Access Tokens</button>
@@ -324,11 +313,11 @@
           <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase" id="cms-tier-badge">Tier</span>
         </div>
 
-        <div id="cms-write-only-panel" class="bg-zinc-50 dark:bg-slate-950 p-6 rounded-2xl border-2 border-zinc-200 dark:border-slate-900 space-y-4">
-          <p class="text-xs uppercase font-mono tracking-wider font-black text-emerald-500">Build Brand New Card Container</p>
+        <div id="cms-write-only-panel" class="bg-zinc-50 dark:bg-slate-950 p-6 rounded-2xl border-2 border-zinc-300 dark:border-slate-900 space-y-4">
+          <h4 class="text-xs uppercase font-mono tracking-wider font-black text-emerald-500">Build Brand New Card Container</h4>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-theme">Pillar Visual Color</label>
+              <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="lbl-cms-theme">Pillar Visual Color</label>
               <select id="cms-target-pillar" aria-labelledby="lbl-cms-theme" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl font-mono text-zinc-800 dark:text-slate-200 outline-none">
                 <option value="blue">🌐 Infrastructure & Cloud</option>
                 <option value="indigo">🛡️ Network & Security</option>
@@ -338,17 +327,17 @@
               </select>
             </div>
             <div>
-              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-title">Blueprint Column Title</label>
+              <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="lbl-cms-title">Blueprint Column Title</label>
               <input type="text" id="cms-input-title" aria-labelledby="lbl-cms-title" placeholder="New Column Blueprint Title" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
             </div>
             <div>
-              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-icon">Main Engine Glyph</label>
+              <label class="block text-[11px] font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="lbl-cms-icon">Main Engine Glyph</label>
               <input type="text" id="cms-input-icon" aria-labelledby="lbl-cms-icon" placeholder="Emoji Icon Placeholder (e.g. ⚡)" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
             </div>
           </div>
 
           <div class="space-y-2">
-            <label class="block text-[11px] font-mono font-bold text-zinc-500 dark:text-slate-400" id="lbl-cms-bullets">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
+            <label class="block text-[11px] font-mono font-bold text-zinc-700 dark:text-slate-300" id="lbl-cms-bullets">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
             <input type="text" id="cms-input-bullets" aria-labelledby="lbl-cms-bullets" placeholder="Feature One, Feature Two, Feature Three, Feature Four" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-4 text-xs rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 font-mono outline-none">
           </div>
 
@@ -360,7 +349,6 @@
   </div>
 
   <script>
-    // DATA BASE ARRAY MODELS
     let enterpriseServicesMatrix = [
       {
         id: "p1",
@@ -404,7 +392,7 @@
     let undoToastTimeoutContainer = null;
     let undoCountdownTimerInterval = null;
 
-    // THE DRAW COMPILER ENGINE GRAPHICS RENDERING HUB
+    // FIXED CONTRAST RATIOS: Upgraded text color tokens from generic gray to heavy maximum-contrast options (zinc-950 / slate-200) to pass Google's strict accessibility check
     function renderCmsDynamicServiceGrid() {
       const gridRoot = document.getElementById('cms-service-grid-root');
       if (!gridRoot) return;
@@ -414,23 +402,23 @@
       enterpriseServicesMatrix.forEach((node, cardIndex) => {
         let borderClass = ''; let shadowClass = ''; let iconBorder = ''; let bulletSpan = ''; let iconColors = ''; let textHover = '';
 
-        if(node.theme === 'blue') { iconColors = 'text-blue-600 dark:text-blue-400'; textHover='group-hover:text-blue-600 dark:group-hover:text-blue-400'; borderClass='hover:border-blue-600 dark:hover:border-blue-500'; shadowClass='hover:shadow-blue-500/20'; iconBorder='group-hover:border-blue-600'; bulletSpan='group-hover:text-blue-500'; }
-        if(node.theme === 'indigo') { iconColors = 'text-indigo-600 dark:text-indigo-400'; textHover='group-hover:text-indigo-600 dark:group-hover:text-indigo-400'; borderClass='hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-500'; }
-        if(node.theme === 'emerald') { iconColors = 'text-emerald-600 dark:text-emerald-400'; textHover='group-hover:text-emerald-600 dark:group-hover:text-emerald-400'; borderClass='hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-500'; }
-        if(node.theme === 'rose') { iconColors = 'text-rose-600 dark:text-rose-400'; textHover='group-hover:text-rose-600 dark:group-hover:text-rose-400'; borderClass='hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-500'; }
-        if(node.theme === 'amber') { iconColors = 'text-amber-600 dark:text-amber-400'; textHover='group-hover:text-amber-600 dark:group-hover:text-amber-400'; borderClass='hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-500'; }
+        if(node.theme === 'blue') { iconColors = 'text-blue-700 dark:text-blue-400'; textHover='group-hover:text-blue-700 dark:group-hover:text-blue-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-blue-600 dark:hover:border-blue-500'; shadowClass='hover:shadow-blue-500/20'; iconBorder='group-hover:border-blue-600'; bulletSpan='group-hover:text-blue-600'; }
+        if(node.theme === 'indigo') { iconColors = 'text-indigo-700 dark:text-indigo-400'; textHover='group-hover:text-indigo-700 dark:group-hover:text-indigo-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-600'; }
+        if(node.theme === 'emerald') { iconColors = 'text-emerald-700 dark:text-emerald-400'; textHover='group-hover:text-emerald-700 dark:group-hover:text-emerald-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-600'; }
+        if(node.theme === 'rose') { iconColors = 'text-rose-700 dark:text-rose-400'; textHover='group-hover:text-rose-700 dark:group-hover:text-rose-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-600'; }
+        if(node.theme === 'amber') { iconColors = 'text-amber-700 dark:text-amber-400'; textHover='group-hover:text-amber-700 dark:group-hover:text-amber-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-600'; }
 
         let bulletListHtml = '';
         node.bullets.forEach((bulletText, bulletIndex) => {
           let singleBulletKillToken = '';
           if (activeClientSessionRole === "Root Admin") {
             singleBulletKillToken = `
-              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" aria-label="Delete specific bullet list item detail string matching ${bulletText}">✕</button>
+              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-600/10 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" aria-label="Delete specific bullet list item detail string matching ${bulletText}">✕</button>
             `;
           }
           bulletListHtml += `
-            <li class="flex items-start text-zinc-600 dark:text-slate-400 py-1 px-1.5 rounded-lg hover:bg-slate-900/30 break-words max-w-full">
-              <span class="text-zinc-400 dark:text-slate-600 ${bulletSpan} font-mono mr-2 text-base flex-shrink-0 mt-0.5">▪</span>
+            <li class="flex items-start text-zinc-900 dark:text-slate-200 py-1 px-1.5 rounded-lg hover:bg-slate-900/30 break-words max-w-full font-medium">
+              <span class="text-zinc-500 dark:text-slate-500 ${bulletSpan} font-mono mr-2 text-base flex-shrink-0 mt-0.5">▪</span>
               <span class="text-xs font-bold tracking-tight leading-snug break-all overflow-hidden">${bulletText}</span>
               ${singleBulletKillToken}
             </li>
@@ -441,8 +429,8 @@
         let deleteButtonMarkup = '';
         if (activeClientSessionRole === "Root Admin") {
           inlineAddInputMarkup = `
-            <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-slate-800/60 flex flex-col space-y-1" onclick="event.stopPropagation();">
-              <label class="text-[9px] font-mono text-zinc-500">Append Node</label>
+            <div class="mt-4 pt-3 border-t border-zinc-300 dark:border-slate-800/60 flex flex-col space-y-1" onclick="event.stopPropagation();">
+              <label class="text-[9px] font-mono text-zinc-600 dark:text-zinc-400 font-bold">Append Node</label>
               <div class="flex space-x-1.5">
                 <input type="text" id="inline-input-${cardIndex}" placeholder="Add..." class="flex-1 bg-zinc-100 dark:bg-slate-950 border border-zinc-300 dark:border-slate-800 text-[11px] px-2 py-1 rounded-lg text-zinc-900 dark:text-white font-mono min-w-0 outline-none">
                 <button onclick="appendSingleBulletFromInlineCard(${cardIndex})" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg transition" aria-label="Inject value string directly inside card list matrix">&plus;</button>
@@ -450,18 +438,18 @@
             </div>
           `;
           deleteButtonMarkup = `
-            <button onclick="event.stopPropagation(); deleteEntireServiceColumnNode(${cardIndex})" class="mt-3 w-full text-center bg-red-600/5 hover:bg-red-600 text-red-500 hover:text-white border border-red-500/20 py-1.5 rounded-lg text-[10px] font-mono font-bold tracking-wider transition-all duration-200" aria-label="Wipe total node data">
+            <button onclick="event.stopPropagation(); deleteEntireServiceColumnNode(${cardIndex})" class="mt-3 w-full text-center bg-red-600/5 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white border border-red-400/20 py-1.5 rounded-lg text-[10px] font-mono font-bold tracking-wider transition-all duration-200" aria-label="Wipe total node data">
               🗑️ Delete Node
             </button>
           `;
         }
 
         const cardMarkupStr = `
-          <div onclick="toggleActiveCard(this, '${node.theme}')" class="service-card group p-5 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-2xl hover:scale-[1.03] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 ${borderClass} shadow-md hover:shadow-xl ${shadowClass} transition-all duration-300 backdrop-blur-md cursor-pointer select-none flex flex-col justify-between min-w-0 overflow-hidden w-full">
+          <div onclick="toggleActiveCard(this, '${node.theme}')" class="service-card group p-5 bg-white/95 dark:bg-brandPanel/95 border-2 rounded-2xl hover:scale-[1.03] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 ${borderClass} shadow-md hover:shadow-xl ${shadowClass} transition-all duration-300 backdrop-blur-md cursor-pointer select-none flex flex-col justify-between min-w-0 overflow-hidden w-full">
             <div>
-              <div class="text-xl mb-3 bg-zinc-100 dark:bg-slate-950 ${iconColors} w-10 h-10 flex items-center justify-center rounded-xl border border-zinc-200 dark:border-slate-800 transition-all duration-300">${node.icon}</div>
+              <div class="text-xl mb-3 bg-zinc-100 dark:bg-slate-950 ${iconColors} w-10 h-10 flex items-center justify-center rounded-xl border border-zinc-300 dark:border-slate-800 transition-all duration-300">${node.icon}</div>
               <h3 class="text-base font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 ${textHover} break-words max-w-full leading-tight mb-3">${node.title}</h3>
-              <ul class="space-y-1 max-w-full overflow-hidden">
+              <ul class="space-y-1_5 max-w-full overflow-hidden">
                 ${bulletListHtml}
               </ul>
             </div>
@@ -475,12 +463,10 @@
       });
     }
 
-    // DELAY SYNCHRONOUS BINDING STABILIZATION LOGIC
     window.onload = function() {
       renderCmsDynamicServiceGrid();
     };
 
-    // GRANULAR CRUD DECK CONTROLLERS
     function appendSingleBulletFromInlineCard(cardIndex) {
       const inlineInput = document.getElementById(`inline-input-${cardIndex}`);
       if (!inlineInput) return;
@@ -509,7 +495,6 @@
       triggerEmergencyUndoToastNotification(`"${targetedColumnNode.title}" Column Dropped`);
     }
 
-    // MASSIVE 15s RESCUE ENGINE COUNTERS
     function triggerEmergencyUndoToastNotification(messageLabel) {
       const toast = document.getElementById('undo-toast-banner');
       const title = document.getElementById('undo-toast-title');
@@ -552,7 +537,6 @@
       document.getElementById('cms-input-title').value = ''; document.getElementById('cms-input-icon').value = ''; document.getElementById('cms-input-bullets').value = '';
     }
 
-    // SECURITY RBAC MATRIX CONTROLLERS
     const adminOverlay = document.getElementById('admin-portal-overlay');
     const adminInnerCard = adminOverlay ? adminOverlay.querySelector('.relative') : null;
     function openAdminPortalModal() { document.body.classList.add('overflow-hidden'); if(adminOverlay) adminOverlay.classList.remove('hidden'); setTimeout(() => { if(adminOverlay) { adminOverlay.classList.remove('opacity-0'); adminOverlay.classList.add('opacity-100'); } if(adminInnerCard) { adminInnerCard.classList.remove('scale-95'); adminInnerCard.classList.add('scale-100'); } }, 10); }
@@ -592,7 +576,6 @@
       renderCmsDynamicServiceGrid(); closeAdminPortalModal();
     }
 
-    // WIZARDS TOGGLES CONFIGS
     const modalOverlayContainer = document.getElementById('quote-modal-overlay');
     const modalInnerCardContainer = modalOverlayContainer ? modalOverlayContainer.querySelector('.relative') : null;
     function openQuoteModal() { document.body.classList.add('overflow-hidden'); if(modalOverlayContainer) modalOverlayContainer.classList.remove('hidden'); setTimeout(() => { if(modalOverlayContainer) { modalOverlayContainer.classList.remove('opacity-0'); modalOverlayContainer.classList.add('opacity-100'); } if(modalInnerCardContainer) { modalInnerCardContainer.classList.remove('scale-95'); modalInnerCardContainer.classList.add('scale-100'); } }, 10); }
