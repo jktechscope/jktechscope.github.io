@@ -37,7 +37,6 @@
       50% { transform: translate(-50%, -4%) scale(1.2); opacity: 1; }
     }
 
-    /* HIGH-SPEED BACKDROP LIQUID GRADIENT SHIFT ALGORITHM */
     @keyframes backdrop-color-shift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -64,17 +63,38 @@
 
     .live-glow-core { animation: glow-pulse 5s ease-in-out infinite; }
 
-    /* RUNNING CODES INSIDE STYLES FOR THE INTENSE COLOR PULSE LAYER */
     .live-color-pulse-bg {
       background-size: 400% 400% !important;
       animation: backdrop-color-shift 12s ease infinite !important;
     }
   </style>
 </head>
-<body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden">
+<body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden pb-16">
 
   <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-blue-500/15 to-transparent dark:from-blue-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
   <div class="live-glow-core absolute top-0 left-1/2 w-full max-w-7xl h-[800px] bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent dark:from-blue-500/35 dark:via-purple-500/15 dark:to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3 select-none filter drop-shadow-2xl">
+    <button onclick="openAdminPortalModal()" class="w-14 h-14 bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center rounded-full shadow-lg border border-slate-700/50 hover:scale-110 active:scale-95 transition-all duration-300 group" title="Launch Administrative Node Override">
+      <span class="text-xl group-hover:rotate-45 transition-transform duration-300">⚙</span>
+    </button>
+    <a href="https://api.whatsapp.com/send?phone=94771234567&text=Hi%20JK%20Techscope%20Solutions!%20I%20just%20audited%20your%20digital%20architecture%20platform%20and%20want%20to%20discuss%20an%20enterprise%20systems%20project." target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300" title="Connect instantly on WhatsApp">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.632-1.023-5.105-2.887-6.971C16.526 1.916 14.058.892 11.43.891c-5.438 0-9.863 4.421-9.867 9.854-.001 1.73.473 3.415 1.371 4.904L1.93 21.054l5.717-1.5c1.511.824 3.1 1.258 4.7 1.26h.001zM17.5 15.3c-.3-.15-1.775-.875-2.05-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.018-.463.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525C9.35 9.625 8.75 8.175 8.5 7.575c-.243-.585-.49-.506-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8 1.05c-.275.975-1.05 3.1-1.15 3.3-.1.2-.2.425-.05.725.15.3.675 2.59 2.76 3.484.496.213.882.34 1.185.437.5.16.955.137 1.315.083.4-.06 1.775-.725 2.025-1.39.25-.665.25-1.235.175-1.35-.075-.115-.275-.165-.575-.315z"/></svg>
+    </a>
+  </div>
+
+  <div id="undo-toast-banner" class="fixed top-28 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg p-4 bg-zinc-950/95 border-2 border-red-500/40 shadow-[0_0_30px_rgba(239,68,68,0.25)] rounded-2xl flex items-center justify-between transition-all duration-500 ease-out transform translate-y-[-150%] opacity-0 backdrop-blur-md font-mono text-sm pointer-events-none">
+    <div class="flex items-center space-x-3 text-zinc-200">
+      <span class="text-xl animate-pulse">⚠️</span>
+      <div>
+        <p class="font-bold text-zinc-100" id="undo-toast-title">Ecosystem Node Dropped</p>
+        <p class="text-xs text-zinc-400" id="undo-toast-subtitle">Changes will finalize in <span id="undo-timer-count" class="text-red-400 font-bold">15</span>s...</p>
+      </div>
+    </div>
+    <button onclick="executeEmergencyUndoOperation()" class="bg-blue-600 hover:bg-blue-500 text-white font-black px-4 py-2 rounded-xl text-xs uppercase shadow-md transition-all duration-300 hover:scale-105 active:scale-95">
+      ↩️ Undo Action
+    </button>
+  </div>
 
   <nav class="relative z-40 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
     <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/30 via-indigo-500/80 to-purple-500/30 dark:from-blue-500/50 dark:via-blue-400 dark:to-indigo-500/50"></div>
@@ -90,11 +110,12 @@
         <div class="hidden md:flex items-center space-x-4 text-sm font-bold uppercase tracking-wider">
           <a href="#services" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Services</a>
           <a href="#projects" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Projects</a>
+          <a href="#testimonials" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Feedback</a>
           <button onclick="openQuoteModal()" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300 uppercase font-bold tracking-wider">Quotation Engine</button>
-          <a href="mailto:julan@jktechscope.lk" class="ml-4 px-6 py-3.5 text-base text-white bg-blue-600 hover:bg-blue-500 rounded-xl font-bold shadow-lg transition-all duration-300 normal-case">Email Us &rarr;</a>
+          <span id="active-role-badge" class="px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold tracking-wide border border-zinc-300/40 dark:border-slate-700/40 text-blue-400">Role: Visitor</span>
         </div>
         <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition">
-          <svg id="theme-toggle-sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 7a3 3 0 100 6 3 3 0 000-6zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2a1 1 0 01.707.293l.707.707a1 1 0 11-1.414 1.414l-.707-.707A1 1 0 0114 4zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zm11.707-4.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM16 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-1.707 4.707a1 1 0 00-1.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 16a1 1 0 11-2 0v-1a1 1 0 11-2 0v1zm-4.293-2.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
+          <svg id="theme-toggle-sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 7a3 3 0 100 6 3 3 0 000-6zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 11-2 0V3a1 1 0 011-1zm4 2a1 1 0 01.707.293l.707.707a1 1 0 11-1.414 1.414l-.707-.707A1 1 0 0114 4zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zm11.707-4.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM16 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-1.707 4.707a1 1 0 00-1.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 16a1 1 0 11-2 0v-1a1 1 0 11-2 0v1zm-4.293-2.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
           <svg id="theme-toggle-moon-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         </button>
       </div>
@@ -121,62 +142,8 @@
         <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Engineered for Scalability and Speed</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
-        <div onclick="toggleActiveCard(this, 'blue')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-blue-600 dark:hover:border-blue-500 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-blue-600 dark:text-blue-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-blue-600 dark:group-hover:border-blue-500/50 transition-all duration-300">🌐</div>
-          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-blue-600 dark:group-hover:text-blue-400">Infrastructure & Cloud</h3>
-          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> Enterprise Servers Support</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> VPS & Storage Solutions</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> Web Hosting & Domains</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> IaaS, PaaS, & SaaS Setup</li>
-          </ul>
+      <div id="cms-service-grid-root" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
         </div>
-        <div onclick="toggleActiveCard(this, 'indigo')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-indigo-600 dark:hover:border-indigo-500 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-indigo-600 dark:group-hover:border-indigo-500/50 transition-all duration-300">🛡️</div>
-          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Network & Security</h3>
-          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Structured Cabling Matrix</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Firewalls & Endpoints</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> SIEM & SOC Monitoring</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Routing & Switching Matrix</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Website & Hosting Security</li>
-          </ul>
-        </div>
-        <div onclick="toggleActiveCard(this, 'emerald')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-emerald-600 dark:hover:border-emerald-500 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-emerald-600 dark:text-emerald-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-emerald-600 dark:group-hover:border-emerald-500/50 transition-all duration-300">👁️</div>
-          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400">Visual Intelligence</h3>
-          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> AI-Powered CCTV Systems</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Biometric Access Control</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Surveillance Analytics</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> IP Telephony & VoIP links</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Security Hardware Setup</li>
-          </ul>
-        </div>
-        <div onclick="toggleActiveCard(this, 'rose')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-rose-600 dark:hover:border-rose-500 shadow-lg hover:shadow-2xl hover:shadow-rose-500/20 dark:hover:shadow-rose-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-rose-600 dark:text-rose-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-rose-600 dark:group-hover:border-rose-500/50 transition-all duration-300">🔥</div>
-          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-rose-600 dark:group-hover:text-rose-400">Branding & Growth</h3>
-          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Corporate Branding & ID</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Social Media Management</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Strategic Campaigns</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Creative Artwork Design</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> SEO & Local Visibility</li>
-          </ul>
-        </div>
-        <div onclick="toggleActiveCard(this, 'amber')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-amber-600 dark:hover:border-amber-500 shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 dark:hover:shadow-amber-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-amber-600 dark:text-amber-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-amber-600 dark:group-hover:border-amber-500/50 transition-all duration-300">⚙️</div>
-          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-amber-600 dark:group-hover:text-amber-400">Managed Services</h3>
-          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> NOC Operations Center</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> 24/7 System Monitoring</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> Professional Corporate Email</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> IT Consultancy & Audit</li>
-            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> Disaster Recovery Loops</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <section id="projects" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
@@ -209,123 +176,126 @@
       </div>
     </section>
 
+    <section id="testimonials" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+      <div class="mb-16 select-none max-w-max">
+        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Client Testimonials</h2>
+        <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Validated Infrastructure Feedback</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="p-8 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-2xl shadow-lg backdrop-blur-md hover:border-blue-500 transition-all duration-300">
+            <p class="text-zinc-600 dark:text-slate-300 text-base italic leading-relaxed">
+              "JK Techscope completely refactored our retail POS network setup. The automation cluster eliminated our transaction latency over cloud routing tables instantly. Five-star engineering support!"
+            </p>
+            <div class="mt-6 flex items-center space-x-3 border-t border-zinc-200 dark:border-slate-800 pt-4 font-mono select-none">
+              <div class="w-10 h-10 bg-blue-600/10 text-blue-500 font-black rounded-lg flex items-center justify-center border border-blue-500/20">CT</div>
+              <div><p class="text-sm font-black text-zinc-900 dark:text-white">Chief Technology Director</p><p class="text-xs text-zinc-400 dark:text-slate-500 font-bold uppercase">Logistics Retail Array</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white/90 dark:bg-brandPanel/90 border-2 border-zinc-200 dark:border-slate-800 p-6 md:p-8 rounded-2xl shadow-xl backdrop-blur-md">
+          <h3 class="text-lg font-black text-zinc-900 dark:text-white tracking-tight mb-2">Submit Systems Feedback</h3>
+          <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-4">
+            <input type="text" name="client_title" required placeholder="e.g., Systems Engineer" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            <input type="text" name="company_context" required placeholder="Corporate Context" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            <textarea name="feedback_message" required rows="3" placeholder="Operational statement details..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono resize-none"></textarea>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl shadow-lg text-xs uppercase tracking-wider">Transmit Log &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section id="quotation" class="max-w-4xl mx-auto px-6 py-24 border-t border-zinc-200 dark:border-slate-800 text-center">
       <div class="p-12 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl shadow-xl backdrop-blur-md hover:border-blue-500 transition-all duration-300">
         <h2 class="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">Get a Quotation</h2>
-        <p class="text-zinc-600 dark:text-slate-400 text-base max-w-xl mx-auto mt-4 leading-relaxed">
-          Configure your network parameters, select workforce scope variables, and compute an enterprise deployment estimate instantly inside our clean on-page processing wizard.
-        </p>
-        <div class="mt-8">
-          <button onclick="openQuoteModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/20 transition text-sm hover:scale-[1.03] active:scale-[0.97]">
-            Launch Requirement Gathering Engine &rarr;
-          </button>
-        </div>
+        <p class="text-zinc-600 dark:text-slate-400 text-base max-w-xl mx-auto mt-4 leading-relaxed">Configure variables instantly inside our clean on-page processing wizard overlay loop.</p>
+        <div class="mt-8"><button onclick="openQuoteModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition text-sm">Launch Requirement Gathering Engine &rarr;</button></div>
       </div>
     </section>
 
   </main>
 
-  <div id="quote-modal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-gradient-to-br from-slate-950/80 via-blue-950/80 to-slate-950/80 dark:from-blue-950/80 dark:via-purple-950/80 dark:to-indigo-950/80 dark:after:bg-rose-950/10 live-color-pulse-bg backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 transition-all duration-500 opacity-0 transform-gpu">
-    
+  <div id="quote-modal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-gradient-to-br from-slate-950/80 via-blue-950/80 to-slate-950/80 dark:from-blue-950/80 dark:via-purple-950/80 dark:to-indigo-950/80 live-color-pulse-bg backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 transition-all duration-500 opacity-0 transform-gpu">
     <div class="relative w-full max-w-6xl bg-white dark:bg-brandPanel border-2 border-zinc-200 dark:border-slate-800/90 rounded-3xl shadow-[0_0_60px_rgba(59,130,246,0.22)] overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
-      
-      <div class="p-6 border-b border-zinc-200 dark:border-slate-800 flex justify-between items-center bg-zinc-50 dark:bg-slate-950/40 select-none">
-        <div class="flex items-center space-x-3">
-          <img src="favicon.png" alt="JK Logo" class="w-8 h-8 object-contain rounded-lg">
-          <p class="text-sm font-mono tracking-wider text-blue-600 dark:text-blue-400 font-black uppercase">System Requirements Matrix Terminal</p>
-        </div>
-        <button onclick="closeQuoteModal()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-200/50 dark:bg-slate-800/60 p-2 rounded-xl transition font-bold text-sm px-4">✕ Close</button>
+      <div class="p-6 border-b border-zinc-200 dark:border-slate-800 flex justify-between items-center bg-zinc-50 dark:bg-slate-950/40">
+        <div class="flex items-center space-x-3"><img src="favicon.png" alt="JK Logo" class="w-8 h-8 object-contain rounded-lg"><p class="text-sm font-mono tracking-wider text-blue-600 dark:text-blue-400 font-black uppercase">System Requirements Matrix Terminal</p></div>
+        <button onclick="closeQuoteModal()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-200/50 dark:bg-slate-800/60 p-2 rounded-xl font-bold text-sm px-4">✕ Close</button>
       </div>
-
       <div class="overflow-y-auto p-8 md:p-10 space-y-8 flex-1">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
           <div class="lg:col-span-7 space-y-6">
             <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
-              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Organization Identity</label>
-                  <input type="text" name="company_name" required placeholder="e.g., Company Ltd" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
-                </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Requester Name</label>
-                  <input type="text" name="requester_name" required placeholder="Your full name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
-                </div>
+                <input type="text" id="feedback-company" placeholder="Organization Identity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                <input type="text" id="feedback-name" placeholder="Requester Full Name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
               </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Business Email</label>
-                  <input type="email" name="email" required placeholder="name@company.com" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
-                </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Industry Classification</label>
-                  <select name="industry_type" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
-                    <option value="Fintech / Banking">Fintech & Banking Operations</option>
-                    <option value="Retail / Logistics">Retail & Logistics POS Networks</option>
-                    <option value="Healthcare Systems">Healthcare & Clinic Databases</option>
-                    <option value="Government Infrastructure">Government Systems Infrastructure</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Total Employee Infrastructure Count (Scale Modifier)</label>
-                <select id="modal-employee-scalar" name="employee_capacity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
-                  <option value="Micro Team (1-10)" data-multiply="1.0">Micro Team Layer (1 - 10 nodes / No added licensing cost)</option>
-                  <option value="Midscale Cluster (11-50)" data-multiply="1.2">Midscale Cluster Core (11 - 50 nodes / +20% overhead scale)</option>
-                  <option value="Enterprise Cluster (51-200)" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50% overhead scale)</option>
-                  <option value="Datacenter Network (201+)" data-multiply="2.0">High-Availability Datacenter (201+ nodes / Double scale complexity)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Select Core Architecture Tier</label>
-                <select id="modal-architecture-base" name="architecture_blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
-                  <option value="Linux Server Infrastructure Setup" data-base="300">Infrastructure Tier: Linux Server Setup & Deployment ($300 base/mo)</option>
-                  <option value="CloudPOS Systems Engineering" data-base="450">Software Engineering Tier: Custom CloudPOS Systems ($450 base/mo)</option>
-                  <option value="Network Infrastructure Hardening" data-base="600">Security Hardening Tier: Firewalls, SIEM & Routing ($600 base/mo)</option>
-                  <option value="Full Architecture Suite Integration" data-base="950">Full-Stack Automation Suite: Total Platform Cluster ($950 base/mo)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Add Specialized Operational Blocks</label>
-                <div class="space-y-4 max-h-[220px] overflow-y-auto p-4 bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 rounded-xl font-mono text-xs text-zinc-700 dark:text-slate-300 shadow-inner">
-                  <div class="space-y-2">
-                    <p class="font-sans font-black text-blue-500 uppercase tracking-widest text-[10px]">Infrastructure & Cloud Nodes</p>
-                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="80" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>Enterprise Servers Support (+$80)</span></label>
-                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="65" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>VPS & Storage Solutions (+$65)</span></label>
-                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="40" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>Web Hosting Security (+$40)</span></label>
-                  </div>
-                  <div class="space-y-2 pt-2 border-t border-zinc-200 dark:border-slate-800/60">
-                    <p class="font-sans font-black text-indigo-500 uppercase tracking-widest text-[10px]">Network & Security Protocols</p>
-                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="120" class="modal-addon-check form-checkbox h-4 w-4 text-indigo-600 rounded"><span>Firewalls & Endpoint Security (+$120)</span></label>
-                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="150" class="modal-addon-check form-checkbox h-4 w-4 text-indigo-600 rounded"><span>SIEM & SOC Live Monitoring (+$150)</span></label>
-                  </div>
-                </div>
-              </div>
-
-              <input type="hidden" id="modal-hidden-price-input" name="estimated_price" value="$300/mo">
+              <input type="email" id="feedback-email" placeholder="Business Email" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+              <select id="modal-employee-scalar" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Micro Team" data-multiply="1.0">Micro Team Layer (1 - 10 nodes)</option><option value="Enterprise Cluster" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50%)</option></select>
+              <select id="modal-architecture-base" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Linux Server Setup" data-base="300">Linux Server Setup & Management ($300/mo)</option><option value="Custom CloudPOS" data-base="450">Custom CloudPOS Web Architecture ($450/mo)</option></select>
               <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg transition text-sm">Transmit Formal Requirements &rarr;</button>
             </form>
           </div>
+          <div class="lg:col-span-5"><div class="p-8 bg-blue-600/5 rounded-2xl border border-blue-500/20 shadow-xl"><p class="text-xs uppercase font-mono tracking-wider font-bold">Calculated Price Matrix</p><p class="text-6xl font-mono font-black text-blue-600 dark:text-blue-400 mt-4">$<span id="modal-quote-value">300</span><span class="text-xl font-sans font-semibold">/mo</span></p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-0">
-            <div class="p-8 bg-blue-600/5 dark:bg-blue-500/5 rounded-2xl border border-blue-500/20 shadow-xl">
-              <p class="text-xs uppercase font-mono tracking-wider text-zinc-500 dark:text-slate-400 font-bold">Calculated Operational Price Matrix</p>
-              <p class="text-6xl font-mono font-black text-blue-600 dark:text-blue-400 mt-4">$<span id="modal-quote-value">300</span><span class="text-xl font-sans font-semibold text-zinc-500 dark:text-slate-400">/mo</span></p>
-              <div class="border-t border-blue-500/10 mt-6 pt-6 text-xs text-zinc-500 dark:text-slate-400 space-y-2 leading-relaxed">
-                <p>▪ Multi-variable node scaling factors apply instantly.</p>
-                <p>▪ Formal estimates are routed via Webhooks directly into infrastructure channels.</p>
-              </div>
-            </div>
+  <div id="admin-portal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-brandDark/95 backdrop-blur-3xl flex items-center justify-center p-6 transition-all duration-300 opacity-0">
+    <div class="w-full max-w-4xl bg-white dark:bg-brandPanel border-2 border-zinc-300 dark:border-slate-800 rounded-3xl shadow-2xl p-8 transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto relative">
+      
+      <button onclick="closeAdminPortalModal()" class="absolute top-6 right-6 text-sm bg-zinc-100 dark:bg-slate-800 text-zinc-400 hover:text-white px-4 py-2 rounded-xl transition">✕ Exit Gate</button>
+      
+      <div id="admin-auth-panel" class="max-w-md mx-auto py-8">
+        <h3 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h3>
+        <div class="space-y-4 mt-6">
+          <input type="password" id="admin-key-input" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
+          <button onclick="validateRoleAccessCredentials()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-lg transition text-sm font-mono tracking-widest uppercase">Authorize Access Tier &rarr;</button>
+          <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-600 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-200 dark:border-slate-800/80">
+            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Injection, Deletion & Undo)</p>
           </div>
-
         </div>
       </div>
 
+      <div id="admin-cms-hub" class="hidden space-y-8 py-4">
+        <div class="border-b border-zinc-200 dark:border-slate-800 pb-4 flex justify-between items-center">
+          <div>
+            <h4 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Core Architecture CMS Console Hub</h4>
+            <p class="text-xs text-zinc-500 dark:text-slate-400 mt-1">Direct memory manipulation layer. Add entire pillar blocks natively to your grid layout.</p>
+          </div>
+          <button onclick="logoutAdminPortalTier()" class="text-xs bg-red-600/10 text-red-400 border border-red-500/20 px-3 py-1.5 rounded-lg hover:bg-red-600 hover:text-white transition">Revoke Access Tokens</button>
+        </div>
+
+        <div class="p-4 bg-blue-500/5 rounded-xl border border-blue-500/20 text-xs font-mono flex justify-between items-center">
+          <p>📡 System Pipeline Status: <span class="text-emerald-400 font-bold">Online</span> | Authenticated Session weight logged securely.</p>
+          <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase" id="cms-tier-badge">Tier</span>
+        </div>
+
+        <div id="cms-write-only-panel" class="bg-zinc-50 dark:bg-slate-950 p-6 rounded-2xl border-2 border-zinc-200 dark:border-slate-900 space-y-4">
+          <p class="text-xs uppercase font-mono tracking-wider font-black text-emerald-500">Build Brand New Card Container</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <select id="cms-target-pillar" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl font-mono text-zinc-800 dark:text-slate-200 outline-none">
+              <option value="blue">🌐 Infrastructure & Cloud</option>
+              <option value="indigo">🛡️ Network & Security</option>
+              <option value="emerald">👁️ Visual Intelligence</option>
+              <option value="rose">🔥 Branding & Growth</option>
+              <option value="amber">⚙️ Managed Services</option>
+            </select>
+            <input type="text" id="cms-input-title" placeholder="New Column Blueprint Title" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
+            <input type="text" id="cms-input-icon" placeholder="Emoji Icon Placeholder (e.g. ⚡)" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-[11px] font-mono font-bold text-zinc-500 dark:text-slate-400">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
+            <input type="text" id="cms-input-bullets" placeholder="Feature One, Feature Two, Feature Three, Feature Four" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-4 text-xs rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 font-mono outline-none">
+          </div>
+
+          <button onclick="commitCmsInjectedNodeToArray()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3.5 rounded-xl uppercase tracking-wider shadow-md transition font-mono">Deploy Entire New Pillar Column &rarr;</button>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -335,98 +305,336 @@
   </footer>
 
   <script>
-    const modalOverlay = document.getElementById('quote-modal-overlay');
-    const modalInnerCard = modalOverlay.querySelector('.relative');
+    let enterpriseServicesMatrix = [
+      {
+        id: "p1",
+        theme: "blue",
+        icon: "🌐",
+        title: "Infrastructure & Cloud",
+        bullets: ["Enterprise Servers Support", "VPS & Storage Solutions", "Web Hosting & Domains", "IaaS, PaaS, & SaaS Setup"]
+      },
+      {
+        id: "p2",
+        theme: "indigo",
+        icon: "🛡️",
+        title: "Network & Security",
+        bullets: ["Structured Cabling Matrix", "Firewalls & Endpoints", "SIEM & SOC Monitoring", "Routing & Switching Matrix", "Website & Hosting Security"]
+      },
+      {
+        id: "p3",
+        theme: "emerald",
+        icon: "👁️",
+        title: "Visual Intelligence",
+        bullets: ["AI-Powered CCTV Systems", "Biometric Access Control", "Surveillance Analytics", "IP Telephony & VoIP links", "Security Hardware Setup"]
+      },
+      {
+        id: "p4",
+        theme: "rose",
+        icon: "🔥",
+        title: "Branding & Growth",
+        bullets: ["Corporate Branding & ID", "Social Media Management", "Strategic Campaigns", "Creative Artwork Design", "SEO & Local Visibility"]
+      },
+      {
+        id: "p5",
+        theme: "amber",
+        icon: "⚙️",
+        title: "Managed Services",
+        bullets: ["NOC Operations Center", "24/7 System Monitoring", "Professional Corporate Email", "IT Consultancy & Audit", "Disaster Recovery Loops"]
+      }
+    ];
 
-    function openQuoteModal() {
-      document.body.classList.add('overflow-hidden');
-      modalOverlay.classList.remove('hidden');
-      setTimeout(() => {
-        modalOverlay.classList.remove('opacity-0');
-        modalOverlay.classList.add('opacity-100');
-        modalInnerCard.classList.remove('scale-95');
-        modalInnerCard.classList.add('scale-100');
-      }, 10);
-    }
+    let activeClientSessionRole = "Visitor";
 
-    function closeQuoteModal() {
-      document.body.classList.remove('overflow-hidden');
-      modalOverlay.classList.remove('opacity-100');
-      modalOverlay.classList.add('opacity-0');
-      modalInnerCard.classList.remove('scale-100');
-      modalInnerCard.classList.add('scale-95');
-      setTimeout(() => {
-        modalOverlay.classList.add('hidden');
-      }, 300);
-    }
+    // CORE CACHE BACKUP HOOK VARIABLES FOR STABLE UNDO DELETIONS (EXTENDED TIMER CONTROL SYSTEM)
+    let lastDeletedItemSnapshot = null; 
+    let undoToastTimeoutContainer = null;
+    let undoCountdownTimerInterval = null;
 
-    // CALCULATION MATRIX ALGORITHM
-    const baseDropdown = document.getElementById('modal-architecture-base');
-    const scalarDropdown = document.getElementById('modal-employee-scalar');
-    const checkboxes = document.querySelectorAll('.modal-addon-check');
-    const display = document.getElementById('modal-quote-value');
-    const hiddenInput = document.getElementById('modal-hidden-price-input');
-
-    function calculate() {
-      const base = parseInt(baseDropdown.options[baseDropdown.selectedIndex].getAttribute('data-base'));
-      const multiply = parseFloat(scalarDropdown.options[scalarDropdown.selectedIndex].getAttribute('data-multiply'));
+    // THE DRAW COMPILER GRAPHICS ENGINE LOOP
+    function renderCmsDynamicServiceGrid() {
+      const gridRoot = document.getElementById('cms-service-grid-root');
+      if (!gridRoot) return;
       
-      let addons = 0;
-      checkboxes.forEach(cb => { if (cb.checked) addons += parseInt(cb.getAttribute('data-addon')); });
+      gridRoot.innerHTML = ''; 
 
-      const finalPrice = Math.round((base * multiply) + addons);
-      display.textContent = finalPrice;
-      hiddenInput.value = `$${finalPrice}/mo`;
+      enterpriseServicesMatrix.forEach((node, cardIndex) => {
+        let borderClass = ''; let shadowClass = ''; let iconBorder = ''; let bulletSpan = ''; let iconColors = ''; let textHover = '';
+
+        if(node.theme === 'blue') { iconColors = 'text-blue-600 dark:text-blue-400'; textHover='group-hover:text-blue-600 dark:group-hover:text-blue-400'; borderClass='hover:border-blue-600 dark:hover:border-blue-500'; shadowClass='hover:shadow-blue-500/20 dark:hover:shadow-blue-500/30'; iconBorder='group-hover:border-blue-600'; bulletSpan='group-hover:text-blue-500'; }
+        if(node.theme === 'indigo') { iconColors = 'text-indigo-600 dark:text-indigo-400'; textHover='group-hover:text-indigo-600 dark:group-hover:text-indigo-400'; borderClass='hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-500'; }
+        if(node.theme === 'emerald') { iconColors = 'text-emerald-600 dark:text-emerald-400'; textHover='group-hover:text-emerald-600 dark:group-hover:text-emerald-400'; borderClass='hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/30'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-500'; }
+        if(node.theme === 'rose') { iconColors = 'text-rose-600 dark:text-rose-400'; textHover='group-hover:text-rose-600 dark:group-hover:text-rose-400'; borderClass='hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20 dark:hover:shadow-rose-500/30'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-500'; }
+        if(node.theme === 'amber') { iconColors = 'text-amber-600 dark:text-amber-400'; textHover='group-hover:text-amber-600 dark:group-hover:text-amber-400'; borderClass='hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20 dark:hover:shadow-amber-500/30'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-500'; }
+
+        let bulletListHtml = '';
+        node.bullets.forEach((bulletText, bulletIndex) => {
+          let singleBulletKillToken = '';
+          if (activeClientSessionRole === "Root Admin") {
+            singleBulletKillToken = `
+              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" title="Remove capability item line">✕</button>
+            `;
+          }
+          bulletListHtml += `
+            <li class="flex items-center text-zinc-600 dark:text-slate-400 py-1 px-1.5 rounded-lg hover:bg-slate-900/30">
+              <span class="text-zinc-400 dark:text-slate-600 ${bulletSpan} font-mono mr-3 text-lg transition-colors">▪</span>
+              <span class="text-sm font-bold tracking-tight">${bulletText}</span>
+              ${singleBulletKillToken}
+            </li>
+          `;
+        });
+
+        let inlineAddInputMarkup = '';
+        let deleteButtonMarkup = '';
+        if (activeClientSessionRole === "Root Admin") {
+          inlineAddInputMarkup = `
+            <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-slate-800/60 flex space-x-2" onclick="event.stopPropagation();">
+              <input type="text" id="inline-input-${cardIndex}" placeholder="Add item..." class="flex-1 bg-zinc-100 dark:bg-slate-950 border border-zinc-300 dark:border-slate-800 text-xs px-2.5 py-1.5 rounded-xl text-zinc-900 dark:text-white font-mono outline-none focus:border-blue-500">
+              <button onclick="appendSingleBulletFromInlineCard(${cardIndex})" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition">&plus;</button>
+            </div>
+          `;
+          deleteButtonMarkup = `
+            <button onclick="event.stopPropagation(); deleteEntireServiceColumnNode(${cardIndex})" class="mt-4 w-full text-center bg-red-600/5 hover:bg-red-600 text-red-500 hover:text-white border border-red-500/20 py-2 rounded-xl text-[11px] font-mono font-bold tracking-wider transition-all duration-200">
+              🗑️ Delete Service Node
+            </button>
+          `;
+        }
+
+        const cardMarkupStr = `
+          <div onclick="toggleActiveCard(this, '${node.theme}')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.05] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 ${borderClass} shadow-lg hover:shadow-2xl ${shadowClass} transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+            <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 ${iconColors} w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 ${iconBorder} transition-all duration-300">${node.icon}</div>
+            <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 ${textHover}">${node.title}</h3>
+            <ul class="text-base mt-5 space-y-1.5 font-bold tracking-tight">
+              ${bulletListHtml}
+            </ul>
+            ${inlineAddInputMarkup}
+            ${deleteButtonMarkup}
+          </div>
+        `;
+        gridRoot.insertAdjacentHTML('beforeend', cardMarkupStr);
+      });
     }
 
-    baseDropdown.addEventListener('change', calculate);
-    scalarDropdown.addEventListener('change', calculate);
-    checkboxes.forEach(cb => cb.addEventListener('change', calculate));
+    // INLINE BULLET WRITE BACK ACTION CONTROLLERS
+    function appendSingleBulletFromInlineCard(cardIndex) {
+      const inlineInput = document.getElementById(`inline-input-${cardIndex}`);
+      if (!inlineInput) return;
 
-    // CARDS SELECTION LOOP
+      const newBulletText = inlineInput.value.trim();
+      if (!newBulletText) return;
+
+      enterpriseServicesMatrix[cardIndex].bullets.push(newBulletText);
+      renderCmsDynamicServiceGrid();
+    }
+
+    // REMOVE SINGLE BULLET METRIC STRINGS LOGS
+    function removeSingleBulletFromCard(cardIndex, bulletIndex) {
+      if (activeClientSessionRole !== "Root Admin") return;
+      
+      const targetedPillar = enterpriseServicesMatrix[cardIndex];
+      const deletedStringValue = targetedPillar.bullets[bulletIndex];
+
+      lastDeletedItemSnapshot = {
+        type: "bullet",
+        cardIndex: cardIndex,
+        bulletIndex: bulletIndex,
+        data: deletedStringValue
+      };
+
+      targetedPillar.bullets.splice(bulletIndex, 1);
+      renderCmsDynamicServiceGrid();
+
+      triggerEmergencyUndoToastNotification(`"${deletedStringValue}" Wiped`);
+    }
+
+    // ERASE WHOLE COLUMN CARD BLOCK
+    function deleteEntireServiceColumnNode(targetIndex) {
+      if (activeClientSessionRole !== "Root Admin") return;
+      
+      const targetedColumnNode = enterpriseServicesMatrix[targetIndex];
+
+      lastDeletedItemSnapshot = {
+        type: "column",
+        index: targetIndex,
+        data: targetedColumnNode
+      };
+
+      enterpriseServicesMatrix.splice(targetIndex, 1);
+      renderCmsDynamicServiceGrid();
+
+      triggerEmergencyUndoToastNotification(`"${targetedColumnNode.title}" Column Dropped`);
+    }
+
+    // ========================================================================
+    // UPGRADED 15-SECOND TOAST CONTROLLER AND COUNTDOWN ALGORITHMS
+    // ========================================================================
+    function triggerEmergencyUndoToastNotification(messageLabel) {
+      const toast = document.getElementById('undo-toast-banner');
+      const title = document.getElementById('undo-toast-title');
+      const countdownCount = document.getElementById('undo-timer-count');
+      
+      clearTimeout(undoToastTimeoutContainer);
+      clearInterval(undoCountdownTimerInterval);
+
+      title.textContent = messageLabel;
+      let runtimeSecondsRemaining = 15; // Comfortably extended to 15 seconds limit
+      countdownCount.textContent = runtimeSecondsRemaining;
+
+      toast.classList.remove('hidden', 'translate-y-[-150%]', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+      undoCountdownTimerInterval = setInterval(() => {
+        runtimeSecondsRemaining--;
+        countdownCount.textContent = runtimeSecondsRemaining;
+        if (runtimeSecondsRemaining <= 0) { clearInterval(undoCountdownTimerInterval); }
+      }, 1000);
+
+      undoToastTimeoutContainer = setTimeout(() => {
+        dismissEmergencyUndoToastUI();
+      }, 15000); // 15000 milliseconds runtime boundaries
+    }
+
+    function dismissEmergencyUndoToastUI() {
+      const toast = document.getElementById('undo-toast-banner');
+      toast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+      toast.classList.add('translate-y-[-150%]', 'opacity-0');
+      setTimeout(() => { lastDeletedItemSnapshot = null; }, 500);
+    }
+
+    // RECALL LOGIC HANDLER FOR THE COUNTDOWN CLOCK OVERRIDE
+    function executeEmergencyUndoOperation() {
+      if (!lastDeletedItemSnapshot) return;
+
+      clearInterval(undoCountdownTimerInterval);
+      clearTimeout(undoToastTimeoutContainer);
+
+      if (lastDeletedItemSnapshot.type === "bullet") {
+        const targetCard = enterpriseServicesMatrix[lastDeletedItemSnapshot.cardIndex];
+        if (targetCard) {
+          targetCard.bullets.splice(lastDeletedItemSnapshot.bulletIndex, 0, lastDeletedItemSnapshot.data);
+        }
+      } 
+      else if (lastDeletedItemSnapshot.type === "column") {
+        enterpriseServicesMatrix.splice(lastDeletedItemSnapshot.index, 0, lastDeletedItemSnapshot.data);
+      }
+
+      renderCmsDynamicServiceGrid(); 
+      dismissEmergencyUndoToastUI();
+      alert("ECOSYSTEM MATRIX RESTORED: Mutation event reversed successfully.");
+    }
+
+    // CMS PLATFORM NEW CONTAINER CORE INJECTOR
+    function commitCmsInjectedNodeToArray() {
+      if (activeClientSessionRole !== "Root Admin") return;
+
+      const selectedPillarTheme = document.getElementById('cms-target-pillar').value;
+      const parsedTitleString = document.getElementById('cms-input-title').value.trim();
+      const parsedIconString = document.getElementById('cms-input-icon').value.trim();
+      const rawBulletsString = document.getElementById('cms-input-bullets').value.trim();
+
+      if (!parsedTitleString || !parsedIconString || !rawBulletsString) {
+        alert("ERROR: Field parameters incomplete."); return;
+      }
+
+      const structuralBulletsArray = rawBulletsString.split(',').map(item => item.trim()).filter(item => item.length > 0);
+      const freshlyCreatedServiceNode = {
+        id: `c-p-${Date.now()}`, theme: selectedPillarTheme, icon: parsedIconString, title: parsedTitleString, bullets: structuralBulletsArray
+      };
+
+      enterpriseServicesMatrix.push(freshlyCreatedServiceNode);
+      renderCmsDynamicServiceGrid();
+      closeAdminPortalModal();
+
+      document.getElementById('cms-input-title').value = ''; document.getElementById('cms-input-icon').value = ''; document.getElementById('cms-input-bullets').value = '';
+    }
+
+    // ========================================================================
+    // ROLE ACCESS RE-VERIFICATION ENGINE CONFIGS
+    // ========================================================================
+    const adminOverlay = document.getElementById('admin-portal-overlay');
+    const adminInnerCard = adminOverlay.querySelector('.relative');
+
+    function openAdminPortalModal() {
+      document.body.classList.add('overflow-hidden'); adminOverlay.classList.remove('hidden');
+      setTimeout(() => { adminOverlay.classList.remove('opacity-0'); adminOverlay.classList.add('opacity-100'); adminInnerCard.classList.remove('scale-95'); adminInnerCard.classList.add('scale-100'); }, 10);
+    }
+    function closeAdminPortalModal() {
+      document.body.classList.remove('overflow-hidden'); adminOverlay.classList.remove('opacity-100'); adminOverlay.classList.add('opacity-0'); adminInnerCard.classList.remove('scale-100'); adminInnerCard.classList.add('scale-95');
+      setTimeout(() => { adminOverlay.add ? adminOverlay.add('hidden') : adminOverlay.classList.add('hidden'); }, 300);
+    }
+
+    function validateRoleAccessCredentials() {
+      const accessInputPhrase = document.getElementById('admin-key-input').value.trim();
+      const badge = document.getElementById('active-role-badge');
+      const authSection = document.getElementById('admin-auth-panel');
+      const cmsHubSection = document.getElementById('admin-cms-hub');
+      const cmsWriteBlock = document.getElementById('cms-write-only-panel');
+      const cmsTierIndicator = document.getElementById('cms-tier-badge');
+
+      if (accessInputPhrase === "manager123") {
+        activeClientSessionRole = "Manager";
+        badge.textContent = "Role: Manager";
+        badge.className = "px-3 py-1.5 rounded-lg bg-amber-500/10 text-xs font-mono font-bold border border-amber-500/30 text-amber-400";
+        authSection.classList.add('hidden'); cmsHubSection.classList.remove('hidden'); cmsWriteBlock.classList.add('opacity-40', 'pointer-events-none');
+        cmsTierIndicator.textContent = "Tier: Manager (Read-Only Control Insights Access)";
+        cmsTierIndicator.className = "px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold text-[10px] uppercase";
+        renderCmsDynamicServiceGrid(); closeAdminPortalModal();
+      } 
+      else if (accessInputPhrase === "admin123") {
+        activeClientSessionRole = "Root Admin";
+        badge.textContent = "Role: Root Admin";
+        badge.className = "px-3 py-1.5 rounded-lg bg-emerald-500/10 text-xs font-mono font-bold border border-emerald-500/30 text-emerald-400";
+        authSection.classList.add('hidden'); cmsHubSection.classList.remove('hidden'); cmsWriteBlock.classList.remove('opacity-40', 'pointer-events-none');
+        cmsTierIndicator.textContent = "Tier: Full Root Admin (Ecosystem Grid CRUD Control Active)";
+        cmsTierIndicator.className = "px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px] uppercase";
+        renderCmsDynamicServiceGrid(); closeAdminPortalModal();
+      } else {
+        alert("ERROR: Authorization access validation phrase string context layout dropped.");
+      }
+      document.getElementById('admin-key-input').value = '';
+    }
+
+    function logoutAdminPortalTier() {
+      const badge = document.getElementById('active-role-badge');
+      activeClientSessionRole = "Visitor";
+      badge.textContent = "Role: Visitor";
+      badge.className = "px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold border border-zinc-300/40 dark:border-slate-700/40 text-blue-400";
+      document.getElementById('admin-auth-panel').classList.remove('hidden'); document.getElementById('admin-cms-hub').classList.add('hidden');
+      renderCmsDynamicServiceGrid(); closeAdminPortalModal();
+    }
+
+    // STANDARD MODALS PRICING LOOPS
+    const modalOverlayContainer = document.getElementById('quote-modal-overlay');
+    const modalInnerCardContainer = modalOverlayContainer ? modalOverlayContainer.querySelector('.relative') : null;
+    function openQuoteModal() { document.body.classList.add('overflow-hidden'); if(modalOverlayContainer) modalOverlayContainer.classList.remove('hidden'); setTimeout(() => { if(modalOverlayContainer) { modalOverlayContainer.classList.remove('opacity-0'); modalOverlayContainer.classList.add('opacity-100'); } if(modalInnerCardContainer) { modalInnerCardContainer.classList.remove('scale-95'); modalInnerCardContainer.classList.add('scale-100'); } }, 10); }
+    function closeQuoteModal() { document.body.classList.remove('overflow-hidden'); if(modalOverlayContainer) { modalOverlayContainer.classList.remove('opacity-100'); modalOverlayContainer.classList.add('opacity-0'); } if(modalInnerCardContainer) { modalInnerCardContainer.classList.remove('scale-100'); modalInnerCardContainer.classList.add('scale-95'); } setTimeout(() => { if(modalOverlayContainer) modalOverlayContainer.classList.add('hidden'); }, 300); }
+
     function toggleActiveCard(element, colorTheme) {
       document.querySelectorAll('.service-card').forEach(card => {
-        card.classList.remove('border-blue-500', 'border-indigo-500', 'border-emerald-500', 'border-rose-500', 'border-amber-500', 'scale-[1.08]', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]');
-        const innerTitle = card.querySelector('h3');
-        innerTitle.classList.remove('text-2xl', 'text-blue-500', 'text-indigo-500', 'text-emerald-500', 'text-rose-500', 'text-amber-500');
+        card.classList.remove('border-blue-500', 'border-indigo-500', 'border-emerald-500', 'border-rose-500', 'border-amber-500', 'scale-[1.05]', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]');
+        const innerTitle = card.querySelector('h3'); if(innerTitle) innerTitle.classList.remove('text-2xl', 'text-blue-500', 'text-indigo-500', 'text-emerald-500', 'text-rose-500', 'text-amber-500');
       });
-
-      let themeColorClass = '';
-      let glowClass = '';
+      let themeColorClass = ''; let glowClass = '';
       if(colorTheme === 'blue') { themeColorClass = 'text-blue-500'; glowClass = 'shadow-[0_0_30px_rgba(59,130,246,0.4)] border-blue-500'; }
       if(colorTheme === 'indigo') { themeColorClass = 'text-indigo-500'; glowClass = 'shadow-[0_0_30px_rgba(99,102,241,0.4)] border-indigo-500'; }
       if(colorTheme === 'emerald') { themeColorClass = 'text-emerald-500'; glowClass = 'shadow-[0_0_30px_rgba(16,185,129,0.4)] border-emerald-500'; }
       if(colorTheme === 'rose') { themeColorClass = 'text-rose-500'; glowClass = 'shadow-[0_0_30px_rgba(244,63,94,0.4)] border-rose-500'; }
       if(colorTheme === 'amber') { themeColorClass = 'text-amber-500'; glowClass = 'shadow-[0_0_30px_rgba(245,158,11,0.4)] border-amber-500'; }
-
-      element.classList.add(...glowClass.split(' '), 'scale-[1.08]');
-      const activeTitle = element.querySelector('h3');
-      activeTitle.classList.add('text-2xl', themeColorClass);
+      element.classList.add(...glowClass.split(' '), 'scale-[1.05]');
+      const activeTitle = element.querySelector('h3'); if(activeTitle) activeTitle.classList.add('text-2xl', themeColorClass);
     }
 
-    // THEME SELECT SWITCH
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleSunIcon = document.getElementById('theme-toggle-sun-icon');
     const themeToggleMoonIcon = document.getElementById('theme-toggle-moon-icon');
-
-    if (document.documentElement.classList.contains('dark')) {
-      themeToggleSunIcon.classList.remove('hidden');
-    } else {
-      themeToggleMoonIcon.classList.remove('hidden');
+    if (document.documentElement.classList.contains('dark')) { if(themeToggleSunIcon) themeToggleSunIcon.classList.remove('hidden'); } else { if(themeToggleMoonIcon) themeToggleMoonIcon.classList.remove('hidden'); }
+    if(themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', function() {
+        if(themeToggleSunIcon && themeToggleMoonIcon) {
+          themeToggleSunIcon.classList.toggle('hidden'); themeToggleMoonIcon.classList.toggle('hidden');
+        }
+        if (document.documentElement.classList.contains('dark')) { document.documentElement.classList.remove('dark'); localStorage.setItem('theme', 'light'); } else { document.documentElement.classList.add('dark'); localStorage.setItem('theme', 'dark'); }
+      });
     }
-
-    themeToggleBtn.addEventListener('click', function() {
-      themeToggleSunIcon.classList.toggle('hidden');
-      themeToggleMoonIcon.classList.toggle('hidden');
-
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
   </script>
 </body>
 </html>
