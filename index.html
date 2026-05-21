@@ -10,8 +10,9 @@
   <meta name="author" content="JK Techscope Solutions">
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -59,15 +60,15 @@
       pointer-events: none;
       background-size: 50px 50px !important;
       background-image: 
-        linear-gradient(to right, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.08) 1px, transparent 1px) !important;
+        linear-gradient(to right, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.06) 1px, transparent 1px) !important;
       will-change: transform;
     }
     
     html.dark .cyber-artwork-live::before {
       background-image: 
-        linear-gradient(to right, rgba(59, 130, 246, 0.16) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.16) 1px, transparent 1px) !important;
+        linear-gradient(to right, rgba(59, 130, 246, 0.14) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.14) 1px, transparent 1px) !important;
     }
 
     @media (min-width: 1024px) {
@@ -78,7 +79,7 @@
           linear-gradient(to bottom, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
           linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
-        animation: grid-travel 12s linear infinite !important;
+        animation: grid-travel 15s linear infinite !important;
       }
       html.dark .cyber-artwork-live::before {
         background-image: 
@@ -111,7 +112,20 @@
     </a>
   </div>
 
-  <nav class="relative z-40 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
+  <div id="undo-toast-banner" class="fixed top-28 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg p-4 bg-zinc-950/95 border-2 border-red-500/40 shadow-[0_0_30px_rgba(239,68,68,0.25)] rounded-2xl flex items-center justify-between transition-all duration-500 ease-out transform translate-y-[-150%] opacity-0 backdrop-blur-md font-mono text-sm pointer-events-none">
+    <div class="flex items-center space-x-3 text-zinc-200">
+      <span class="text-xl animate-pulse">⚠️</span>
+      <div>
+        <p class="font-bold text-zinc-100" id="undo-toast-title">Ecosystem Node Dropped</p>
+        <p class="text-xs text-zinc-400" id="undo-toast-subtitle">Changes will finalize in <span id="undo-timer-count" class="text-red-400 font-bold">15</span>s...</p>
+      </div>
+    </div>
+    <button onclick="executeEmergencyUndoOperation()" class="bg-blue-600 hover:bg-blue-500 text-white font-black px-4 py-2 rounded-xl text-xs uppercase shadow-md transition-all duration-300 hover:scale-105 active:scale-95">
+      ↩️ Undo Action
+    </button>
+  </div>
+
+  <nav class="relative z-40  top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
     <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/30 via-indigo-500/80 to-purple-500/30 dark:from-blue-500/50 dark:via-blue-400 dark:to-indigo-500/50"></div>
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="#" class="flex items-center space-x-4 group select-none">
@@ -139,13 +153,13 @@
 
   <main class="relative z-10">
     <header class="relative max-w-5xl mx-auto pt-24 pb-12 px-6 text-center select-none">
-      <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-800 dark:text-blue-400 desert-text text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
+      <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-800 dark:text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
       <h1 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white mt-6 leading-[1.15]">Shaping Your Digital Future With <br><span class="text-blue-700 dark:text-blue-400">Enterprise Cloud Solutions</span></h1>
       <p class="text-zinc-700 dark:text-slate-300 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-medium">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure.</p>
     </header>
 
-    <section class="max-w-5xl mx-auto px-6 pb-20">
-      <div class="relative w-full aspect-video rounded-3xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 bg-black shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all duration-300 transform-gpu cursor-pointer">
+    <section class="max-w-5xl mx-auto px-6 pb-20 aspect-video w-full">
+      <div class="relative w-full h-full rounded-3xl overflow-hidden border-2 border-zinc-300 dark:border-slate-800 bg-slate-950 shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 transform-gpu cursor-pointer">
         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/zDAYZU4A3w0?autoplay=0&mute=1&loop=1&playlist=zDAYZU4A3w0" title="JK Techscope Infrastructure Operations Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
     </section>
@@ -288,13 +302,13 @@
       <button onclick="closeAdminPortalModal()" class="absolute top-6 right-6 text-sm bg-zinc-100 dark:bg-slate-800 text-zinc-500 hover:text-white px-4 py-2 rounded-xl transition">✕ Exit Gate</button>
       
       <div id="admin-auth-panel" class="max-w-md mx-auto py-8">
-        <h2 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h2>
+        <h3 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h3>
         <div class="space-y-4 mt-6">
           <label class="block text-xs font-mono text-zinc-700 dark:text-slate-300 font-bold mb-1" id="lbl-admin-key">System Passkey String</label>
           <input type="password" id="admin-key-input" aria-labelledby="lbl-admin-key" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-300 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
           <button onclick="validateRoleAccessCredentials()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-lg transition text-sm font-mono tracking-widest uppercase">Authorize Access Tier &rarr;</button>
           <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-400 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-300 dark:border-slate-800/80">
-            <p>🔑 Access Keys: <span class="text-amber-600 font-bold">manager123</span> (Read) | <span class="text-emerald-600 font-bold">admin123</span> (Full CRUD Injection, Deletion & Undo)</p>
+            <p>🔑 Access Keys: <span class="text-amber-600 font-bold">manager123</span> (Read) | <span class="text-emerald-600 font-bold">admin123</span> (Full CRUD Dynamic Delete)</p>
           </div>
         </div>
       </div>
@@ -337,7 +351,7 @@
           </div>
 
           <div class="space-y-2">
-            <label class="block text-[11px] font-mono font-bold text-zinc-700 dark:text-slate-300" id="lbl-cms-bullets">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
+            <label class="block text-[11px] font-mono font-bold text-zinc-500 dark:text-slate-400" id="lbl-cms-bullets">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
             <input type="text" id="cms-input-bullets" aria-labelledby="lbl-cms-bullets" placeholder="Feature One, Feature Two, Feature Three, Feature Four" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-4 text-xs rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 font-mono outline-none">
           </div>
 
@@ -392,7 +406,6 @@
     let undoToastTimeoutContainer = null;
     let undoCountdownTimerInterval = null;
 
-    // FIXED CONTRAST RATIOS: Upgraded text color tokens from generic gray to heavy maximum-contrast options (zinc-950 / slate-200) to pass Google's strict accessibility check
     function renderCmsDynamicServiceGrid() {
       const gridRoot = document.getElementById('cms-service-grid-root');
       if (!gridRoot) return;
@@ -406,14 +419,14 @@
         if(node.theme === 'indigo') { iconColors = 'text-indigo-700 dark:text-indigo-400'; textHover='group-hover:text-indigo-700 dark:group-hover:text-indigo-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-600'; }
         if(node.theme === 'emerald') { iconColors = 'text-emerald-700 dark:text-emerald-400'; textHover='group-hover:text-emerald-700 dark:group-hover:text-emerald-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-600'; }
         if(node.theme === 'rose') { iconColors = 'text-rose-700 dark:text-rose-400'; textHover='group-hover:text-rose-700 dark:group-hover:text-rose-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-600'; }
-        if(node.theme === 'amber') { iconColors = 'text-amber-700 dark:text-amber-400'; textHover='group-hover:text-amber-700 dark:group-hover:text-amber-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-600'; }
+        if(node.theme === 'amber') { iconColors = 'text-amber-700 dark:text-amber-400'; textHover='group-hover:text-amber-600 dark:group-hover:text-amber-400'; borderClass='border-zinc-300 dark:border-slate-800 hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-600'; }
 
         let bulletListHtml = '';
         node.bullets.forEach((bulletText, bulletIndex) => {
           let singleBulletKillToken = '';
           if (activeClientSessionRole === "Root Admin") {
             singleBulletKillToken = `
-              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-600/10 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" aria-label="Delete specific bullet list item detail string matching ${bulletText}">✕</button>
+              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-500/10 hover:bg-red-500 text-red-600 dark:text-red-400 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" aria-label="Delete specific bullet list item detail string matching ${bulletText}">✕</button>
             `;
           }
           bulletListHtml += `
@@ -486,6 +499,7 @@
       triggerEmergencyUndoToastNotification(`"${deletedStringValue}" Wiped`);
     }
 
+    // FIXED MUTATION INTENSITY: Removed prompt alerts, routing deletion confirmation entirely into the responsive 15-second undo stack
     function deleteEntireServiceColumnNode(targetIndex) {
       if (activeClientSessionRole !== "Root Admin") return;
       const targetedColumnNode = enterpriseServicesMatrix[targetIndex];
