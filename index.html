@@ -37,7 +37,13 @@
       50% { transform: translate(-50%, -4%) scale(1.2); opacity: 1; }
     }
 
-    /* Light Mode: High-contrast grid layout blueprint */
+    /* HIGH-SPEED BACKDROP LIQUID GRADIENT SHIFT ALGORITHM */
+    @keyframes backdrop-color-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .cyber-artwork-live {
       background-size: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px !important;
       background-image: 
@@ -48,7 +54,6 @@
       animation: grid-travel 10s linear infinite !important;
     }
     
-    /* Dark Mode: Vivid glowing neon mesh matrix */
     html.dark .cyber-artwork-live {
       background-image: 
         linear-gradient(to right, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
@@ -58,6 +63,12 @@
     }
 
     .live-glow-core { animation: glow-pulse 5s ease-in-out infinite; }
+
+    /* RUNNING CODES INSIDE STYLES FOR THE INTENSE COLOR PULSE LAYER */
+    .live-color-pulse-bg {
+      background-size: 400% 400% !important;
+      animation: backdrop-color-shift 12s ease infinite !important;
+    }
   </style>
 </head>
 <body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden">
@@ -65,7 +76,7 @@
   <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-blue-500/15 to-transparent dark:from-blue-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
   <div class="live-glow-core absolute top-0 left-1/2 w-full max-w-7xl h-[800px] bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent dark:from-blue-500/35 dark:via-purple-500/15 dark:to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
 
-  <nav class="relative z-50 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
+  <nav class="relative z-40 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
     <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/30 via-indigo-500/80 to-purple-500/30 dark:from-blue-500/50 dark:via-blue-400 dark:to-indigo-500/50"></div>
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="#" class="flex items-center space-x-4 group select-none">
@@ -79,8 +90,7 @@
         <div class="hidden md:flex items-center space-x-4 text-sm font-bold uppercase tracking-wider">
           <a href="#services" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Services</a>
           <a href="#projects" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Projects</a>
-          <a href="#metrics" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Metrics</a>
-          <a href="#quotation" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Quotation Engine</a>
+          <button onclick="openQuoteModal()" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300 uppercase font-bold tracking-wider">Quotation Engine</button>
           <a href="mailto:julan@jktechscope.lk" class="ml-4 px-6 py-3.5 text-base text-white bg-blue-600 hover:bg-blue-500 rounded-xl font-bold shadow-lg transition-all duration-300 normal-case">Email Us &rarr;</a>
         </div>
         <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition">
@@ -96,10 +106,10 @@
     <header class="relative max-w-5xl mx-auto pt-24 pb-12 px-6 text-center select-none">
       <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-700 dark:text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
       <h1 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white mt-6 leading-[1.15]">Shaping Your Digital Future With <br><span class="text-blue-600 dark:text-blue-400">Enterprise Cloud Solutions</span></h1>
-      <p class="text-zinc-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure Tailored to Scale.</p>
+      <p class="text-zinc-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure.</p>
     </header>
 
-   <section class="max-w-5xl mx-auto px-6 pb-20">
+    <section class="max-w-5xl mx-auto px-6 pb-20">
       <div class="relative w-full aspect-video rounded-3xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 bg-black shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all duration-300 transform-gpu cursor-pointer">
         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/zDAYZU4A3w0?autoplay=0&mute=1&loop=1&playlist=zDAYZU4A3w0" title="JK Techscope Infrastructure Operations Overview" frameborder="0" allowfullscreen loading="lazy"></iframe>
       </div>
@@ -112,7 +122,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
-        
         <div onclick="toggleActiveCard(this, 'blue')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-blue-600 dark:hover:border-blue-500 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
           <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-blue-600 dark:text-blue-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-blue-600 dark:group-hover:border-blue-500/50 transition-all duration-300">🌐</div>
           <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-blue-600 dark:group-hover:text-blue-400">Infrastructure & Cloud</h3>
@@ -123,7 +132,6 @@
             <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> IaaS, PaaS, & SaaS Setup</li>
           </ul>
         </div>
-
         <div onclick="toggleActiveCard(this, 'indigo')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-indigo-600 dark:hover:border-indigo-500 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
           <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-indigo-600 dark:group-hover:border-indigo-500/50 transition-all duration-300">🛡️</div>
           <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Network & Security</h3>
@@ -135,7 +143,6 @@
             <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Website & Hosting Security</li>
           </ul>
         </div>
-
         <div onclick="toggleActiveCard(this, 'emerald')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-emerald-600 dark:hover:border-emerald-500 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
           <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-emerald-600 dark:text-emerald-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-emerald-600 dark:group-hover:border-emerald-500/50 transition-all duration-300">👁️</div>
           <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400">Visual Intelligence</h3>
@@ -147,7 +154,6 @@
             <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Security Hardware Setup</li>
           </ul>
         </div>
-
         <div onclick="toggleActiveCard(this, 'rose')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-rose-600 dark:hover:border-rose-500 shadow-lg hover:shadow-2xl hover:shadow-rose-500/20 dark:hover:shadow-rose-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
           <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-rose-600 dark:text-rose-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-rose-600 dark:group-hover:border-rose-500/50 transition-all duration-300">🔥</div>
           <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-rose-600 dark:group-hover:text-rose-400">Branding & Growth</h3>
@@ -159,7 +165,6 @@
             <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> SEO & Local Visibility</li>
           </ul>
         </div>
-
         <div onclick="toggleActiveCard(this, 'amber')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-amber-600 dark:hover:border-amber-500 shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 dark:hover:shadow-amber-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
           <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-amber-600 dark:text-amber-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-amber-600 dark:group-hover:border-amber-500/50 transition-all duration-300">⚙️</div>
           <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-amber-600 dark:group-hover:text-amber-400">Managed Services</h3>
@@ -171,7 +176,6 @@
             <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> Disaster Recovery Loops</li>
           </ul>
         </div>
-
       </div>
     </section>
 
@@ -209,17 +213,121 @@
       <div class="p-12 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl shadow-xl backdrop-blur-md hover:border-blue-500 transition-all duration-300">
         <h2 class="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">Get a Quotation</h2>
         <p class="text-zinc-600 dark:text-slate-400 text-base max-w-xl mx-auto mt-4 leading-relaxed">
-          Configure your network parameters, select workforce scope variables, and compute an enterprise deployment estimate instantly inside our standalone requirement gathering tab.
+          Configure your network parameters, select workforce scope variables, and compute an enterprise deployment estimate instantly inside our clean on-page processing wizard.
         </p>
         <div class="mt-8">
-          <a href="quote-portal.html" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/20 transition text-sm hover:scale-[1.03] active:scale-[0.97]">
+          <button onclick="openQuoteModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/20 transition text-sm hover:scale-[1.03] active:scale-[0.97]">
             Launch Requirement Gathering Engine &rarr;
-          </a>
+          </button>
         </div>
       </div>
     </section>
 
   </main>
+
+  <div id="quote-modal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-gradient-to-br from-slate-950/80 via-blue-950/80 to-slate-950/80 dark:from-blue-950/80 dark:via-purple-950/80 dark:to-indigo-950/80 dark:after:bg-rose-950/10 live-color-pulse-bg backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 transition-all duration-500 opacity-0 transform-gpu">
+    
+    <div class="relative w-full max-w-6xl bg-white dark:bg-brandPanel border-2 border-zinc-200 dark:border-slate-800/90 rounded-3xl shadow-[0_0_60px_rgba(59,130,246,0.22)] overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
+      
+      <div class="p-6 border-b border-zinc-200 dark:border-slate-800 flex justify-between items-center bg-zinc-50 dark:bg-slate-950/40 select-none">
+        <div class="flex items-center space-x-3">
+          <img src="favicon.png" alt="JK Logo" class="w-8 h-8 object-contain rounded-lg">
+          <p class="text-sm font-mono tracking-wider text-blue-600 dark:text-blue-400 font-black uppercase">System Requirements Matrix Terminal</p>
+        </div>
+        <button onclick="closeQuoteModal()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-200/50 dark:bg-slate-800/60 p-2 rounded-xl transition font-bold text-sm px-4">✕ Close</button>
+      </div>
+
+      <div class="overflow-y-auto p-8 md:p-10 space-y-8 flex-1">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Organization Identity</label>
+                  <input type="text" name="company_name" required placeholder="e.g., Company Ltd" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Requester Name</label>
+                  <input type="text" name="requester_name" required placeholder="Your full name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Business Email</label>
+                  <input type="email" name="email" required placeholder="name@company.com" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/60 dark:placeholder-slate-500/60 outline-none focus:border-blue-500 focus:bg-white dark:focus:bg-black focus:scale-[1.01] transition font-mono">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Industry Classification</label>
+                  <select name="industry_type" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
+                    <option value="Fintech / Banking">Fintech & Banking Operations</option>
+                    <option value="Retail / Logistics">Retail & Logistics POS Networks</option>
+                    <option value="Healthcare Systems">Healthcare & Clinic Databases</option>
+                    <option value="Government Infrastructure">Government Systems Infrastructure</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Total Employee Infrastructure Count (Scale Modifier)</label>
+                <select id="modal-employee-scalar" name="employee_capacity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
+                  <option value="Micro Team (1-10)" data-multiply="1.0">Micro Team Layer (1 - 10 nodes / No added licensing cost)</option>
+                  <option value="Midscale Cluster (11-50)" data-multiply="1.2">Midscale Cluster Core (11 - 50 nodes / +20% overhead scale)</option>
+                  <option value="Enterprise Cluster (51-200)" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50% overhead scale)</option>
+                  <option value="Datacenter Network (201+)" data-multiply="2.0">High-Availability Datacenter (201+ nodes / Double scale complexity)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-2">Select Core Architecture Tier</label>
+                <select id="modal-architecture-base" name="architecture_blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm text-zinc-800 dark:text-slate-200 rounded-xl focus:border-blue-500 focus:bg-white dark:focus:bg-black transition font-mono cursor-pointer">
+                  <option value="Linux Server Infrastructure Setup" data-base="300">Infrastructure Tier: Linux Server Setup & Deployment ($300 base/mo)</option>
+                  <option value="CloudPOS Systems Engineering" data-base="450">Software Engineering Tier: Custom CloudPOS Systems ($450 base/mo)</option>
+                  <option value="Network Infrastructure Hardening" data-base="600">Security Hardening Tier: Firewalls, SIEM & Routing ($600 base/mo)</option>
+                  <option value="Full Architecture Suite Integration" data-base="950">Full-Stack Automation Suite: Total Platform Cluster ($950 base/mo)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-slate-400 mb-3">Add Specialized Operational Blocks</label>
+                <div class="space-y-4 max-h-[220px] overflow-y-auto p-4 bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 rounded-xl font-mono text-xs text-zinc-700 dark:text-slate-300 shadow-inner">
+                  <div class="space-y-2">
+                    <p class="font-sans font-black text-blue-500 uppercase tracking-widest text-[10px]">Infrastructure & Cloud Nodes</p>
+                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="80" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>Enterprise Servers Support (+$80)</span></label>
+                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="65" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>VPS & Storage Solutions (+$65)</span></label>
+                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="40" class="modal-addon-check form-checkbox h-4 w-4 text-blue-600 rounded"><span>Web Hosting Security (+$40)</span></label>
+                  </div>
+                  <div class="space-y-2 pt-2 border-t border-zinc-200 dark:border-slate-800/60">
+                    <p class="font-sans font-black text-indigo-500 uppercase tracking-widest text-[10px]">Network & Security Protocols</p>
+                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="120" class="modal-addon-check form-checkbox h-4 w-4 text-indigo-600 rounded"><span>Firewalls & Endpoint Security (+$120)</span></label>
+                    <label class="flex items-center space-x-3 cursor-pointer py-1 hover:text-white"><input type="checkbox" data-addon="150" class="modal-addon-check form-checkbox h-4 w-4 text-indigo-600 rounded"><span>SIEM & SOC Live Monitoring (+$150)</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" id="modal-hidden-price-input" name="estimated_price" value="$300/mo">
+              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg transition text-sm">Transmit Formal Requirements &rarr;</button>
+            </form>
+          </div>
+
+          <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-0">
+            <div class="p-8 bg-blue-600/5 dark:bg-blue-500/5 rounded-2xl border border-blue-500/20 shadow-xl">
+              <p class="text-xs uppercase font-mono tracking-wider text-zinc-500 dark:text-slate-400 font-bold">Calculated Operational Price Matrix</p>
+              <p class="text-6xl font-mono font-black text-blue-600 dark:text-blue-400 mt-4">$<span id="modal-quote-value">300</span><span class="text-xl font-sans font-semibold text-zinc-500 dark:text-slate-400">/mo</span></p>
+              <div class="border-t border-blue-500/10 mt-6 pt-6 text-xs text-zinc-500 dark:text-slate-400 space-y-2 leading-relaxed">
+                <p>▪ Multi-variable node scaling factors apply instantly.</p>
+                <p>▪ Formal estimates are routed via Webhooks directly into infrastructure channels.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <footer class="border-t border-zinc-200 dark:border-slate-900 bg-zinc-200/40 dark:bg-brandDark py-12 text-center text-xs text-slate-500 relative z-10">
     <p>&copy; 2026 JK Techscope Solutions. All Infrastructure Rights Reserved.</p>
@@ -227,12 +335,58 @@
   </footer>
 
   <script>
+    const modalOverlay = document.getElementById('quote-modal-overlay');
+    const modalInnerCard = modalOverlay.querySelector('.relative');
+
+    function openQuoteModal() {
+      document.body.classList.add('overflow-hidden');
+      modalOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        modalOverlay.classList.remove('opacity-0');
+        modalOverlay.classList.add('opacity-100');
+        modalInnerCard.classList.remove('scale-95');
+        modalInnerCard.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeQuoteModal() {
+      document.body.classList.remove('overflow-hidden');
+      modalOverlay.classList.remove('opacity-100');
+      modalOverlay.classList.add('opacity-0');
+      modalInnerCard.classList.remove('scale-100');
+      modalInnerCard.classList.add('scale-95');
+      setTimeout(() => {
+        modalOverlay.classList.add('hidden');
+      }, 300);
+    }
+
+    // CALCULATION MATRIX ALGORITHM
+    const baseDropdown = document.getElementById('modal-architecture-base');
+    const scalarDropdown = document.getElementById('modal-employee-scalar');
+    const checkboxes = document.querySelectorAll('.modal-addon-check');
+    const display = document.getElementById('modal-quote-value');
+    const hiddenInput = document.getElementById('modal-hidden-price-input');
+
+    function calculate() {
+      const base = parseInt(baseDropdown.options[baseDropdown.selectedIndex].getAttribute('data-base'));
+      const multiply = parseFloat(scalarDropdown.options[scalarDropdown.selectedIndex].getAttribute('data-multiply'));
+      
+      let addons = 0;
+      checkboxes.forEach(cb => { if (cb.checked) addons += parseInt(cb.getAttribute('data-addon')); });
+
+      const finalPrice = Math.round((base * multiply) + addons);
+      display.textContent = finalPrice;
+      hiddenInput.value = `$${finalPrice}/mo`;
+    }
+
+    baseDropdown.addEventListener('change', calculate);
+    scalarDropdown.addEventListener('change', calculate);
+    checkboxes.forEach(cb => cb.addEventListener('change', calculate));
+
+    // CARDS SELECTION LOOP
     function toggleActiveCard(element, colorTheme) {
       document.querySelectorAll('.service-card').forEach(card => {
-        card.classList.remove(
-          'border-blue-500', 'border-indigo-500', 'border-emerald-500', 'border-rose-500', 'border-amber-500', 
-          'scale-[1.08]', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]'
-        );
+        card.classList.remove('border-blue-500', 'border-indigo-500', 'border-emerald-500', 'border-rose-500', 'border-amber-500', 'scale-[1.08]', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]');
         const innerTitle = card.querySelector('h3');
         innerTitle.classList.remove('text-2xl', 'text-blue-500', 'text-indigo-500', 'text-emerald-500', 'text-rose-500', 'text-amber-500');
       });
@@ -250,6 +404,7 @@
       activeTitle.classList.add('text-2xl', themeColorClass);
     }
 
+    // THEME SELECT SWITCH
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleSunIcon = document.getElementById('theme-toggle-sun-icon');
     const themeToggleMoonIcon = document.getElementById('theme-toggle-moon-icon');
