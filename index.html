@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,152 +8,270 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             brandDark: '#020617',
-            brandPanel: '#090d1f',
+            brandPanel: '#0f172a',
           }
         }
       }
     }
-  </script>
-</head>
-<body class="bg-brandDark text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <nav class="border-b border-slate-900 bg-brandDark/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <style>
+    @keyframes grid-travel {
+      0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+      100% { background-position: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px; }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { transform: translate(-50%, 0) scale(0.9); opacity: 0.7; }
+      50% { transform: translate(-50%, -4%) scale(1.2); opacity: 1; }
+    }
+
+    /* Light Mode: High-contrast grid layout blueprint */
+    .cyber-artwork-live {
+      background-size: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px !important;
+      background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
+        linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+      animation: grid-travel 10s linear infinite !important;
+    }
+    
+    /* Dark Mode: Vivid glowing neon mesh matrix */
+    html.dark .cyber-artwork-live {
+      background-image: 
+        linear-gradient(to right, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
+        linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px) !important;
+    }
+
+    .live-glow-core { animation: glow-pulse 5s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-brandDark cyber-artwork-live text-zinc-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-500 relative min-h-screen overflow-x-hidden">
+
+  <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-blue-500/15 to-transparent dark:from-blue-600/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+  <div class="live-glow-core absolute top-0 left-1/2 w-full max-w-7xl h-[800px] bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent dark:from-blue-500/35 dark:via-purple-500/15 dark:to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <nav class="relative z-50 sticky top-0 bg-white/75 dark:bg-brandDark/70 backdrop-blur-2xl px-6 py-6 shadow-xl shadow-zinc-900/5 dark:shadow-black/40 transition-all duration-300">
+    <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/30 via-indigo-500/80 to-purple-500/30 dark:from-blue-500/50 dark:via-blue-400 dark:to-indigo-500/50"></div>
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      
-      <div class="flex items-center space-x-3">
-        <img src="favicon.png" alt="JK Techscope Logo" class="w-8 h-8 object-contain rounded">
-        <span class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-          JK TECHSCOPE
-        </span>
-      </div>
-      
-      <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-        <a href="#services" class="hover:text-blue-400 transition">Services</a>
-        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-        <a href="mailto:julan@jktechscope.lk" class="font-semibold text-blue-500 hover:text-blue-400 transition">Email Us &rarr;</a>
+      <a href="#" class="flex items-center space-x-4 group select-none">
+        <img src="favicon.png" alt="JK Techscope Logo" class="w-12 h-12 object-contain rounded-xl shadow-md border border-zinc-300/30 dark:border-slate-700/50 group-hover:scale-105 transition-transform duration-300" loading="eager" fetchpriority="high">
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-blue-400 dark:via-indigo-400 dark:to-blue-400 bg-[length:200%_auto]">JK TECHSCOPE</span>
+          <span class="text-xs font-mono tracking-widest text-zinc-500 dark:text-slate-400 uppercase font-bold -mt-0.5">Solutions Matrix</span>
+        </div>
+      </a>
+      <div class="flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-4 text-sm font-bold uppercase tracking-wider">
+          <a href="#services" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Services</a>
+          <a href="#projects" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Projects</a>
+          <a href="#metrics" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Metrics</a>
+          <a href="#quotation" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300">Quotation Engine</a>
+          <a href="mailto:julan@jktechscope.lk" class="ml-4 px-6 py-3.5 text-base text-white bg-blue-600 hover:bg-blue-500 rounded-xl font-bold shadow-lg transition-all duration-300 normal-case">Email Us &rarr;</a>
+        </div>
+        <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition">
+          <svg id="theme-toggle-sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 7a3 3 0 100 6 3 3 0 000-6zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2a1 1 0 01.707.293l.707.707a1 1 0 11-1.414 1.414l-.707-.707A1 1 0 0114 4zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zm11.707-4.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM16 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-1.707 4.707a1 1 0 00-1.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 16a1 1 0 11-2 0v-1a1 1 0 11-2 0v1zm-4.293-2.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
+          <svg id="theme-toggle-moon-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        </button>
       </div>
     </div>
   </nav>
 
-  <header class="relative max-w-5xl mx-auto pt-24 pb-20 px-6 text-center z-10">
-    <div class="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full -z-10 max-w-3xl mx-auto"></div>
-    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-blue-500/20 uppercase">
-      Next-Gen Infrastructure & Software Engineering
-    </span>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-6 leading-[1.15]">
-      Shaping Your Digital Future With <br />
-      <span class="text-blue-400">Enterprise Cloud Solutions</span>
-    </h1>
-    <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
-      We design, build, and deploy high-performance containerized software architectures, custom billing POS networks, and robust Linux infrastructure tailored to scale your enterprise operations.
-    </p>
-    <div class="mt-10">
-      <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition text-center text-sm">
-        Launch Your Project
-      </a>
-    </div>
-  </header>
+  <main class="relative z-10">
+    
+    <header class="relative max-w-5xl mx-auto pt-24 pb-12 px-6 text-center select-none">
+      <span class="px-3 py-1 bg-zinc-200 dark:bg-blue-500/10 text-zinc-700 dark:text-blue-400 text-xs font-semibold tracking-widest rounded-full border border-zinc-300 dark:border-blue-500/20 uppercase">Next-Gen Infrastructure & Software Engineering</span>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white mt-6 leading-[1.15]">Shaping Your Digital Future With <br><span class="text-blue-600 dark:text-blue-400">Enterprise Cloud Solutions</span></h1>
+      <p class="text-zinc-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">We design, build, and deploy high-performance containerized architectures, custom billing POS networks, and robust Linux infrastructure Tailored to Scale.</p>
+    </header>
 
-  <section id="services" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-900">
-    <div class="text-center md:text-left mb-16">
-      <h2 class="text-xs uppercase text-blue-400 font-bold tracking-widest">Our Operations Matrix</h2>
-      <p class="text-3xl font-black tracking-tight mt-2 text-white">Engineered for Scalability and Speed</p>
-    </div>
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+      <div class="relative w-full aspect-video rounded-3xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 bg-black shadow-2xl hover:scale-[1.05] active:scale-[0.98] hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all duration-300 transform-gpu cursor-pointer">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&loop=1&playlist=dQw4w9WgXcQ" title="JK Techscope Operations Overview" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
-        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">🌐</div>
-        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Server Management</h3>
-        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Linux system administration, LVM storage scaling, kernel tuning, and high-availability virtualization setups.</p>
+    <section id="services" class="max-w-[95rem] mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+      <div class="mb-16 select-none max-w-max">
+        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Our Operations Matrix</h2>
+        <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Engineered for Scalability and Speed</p>
       </div>
 
-      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
-        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">☁️</div>
-        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Cloud Solutions</h3>
-        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Custom web architectures, secure relational databases, and automated ERP/POS system deployments.</p>
-      </div>
-
-      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
-        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">🛡️</div>
-        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Network Security</h3>
-        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Aggressive firewall filtering, secure remote tunnels, infrastructure hardening, and access controls.</p>
-      </div>
-
-      <div class="group p-8 bg-brandPanel border border-slate-900 rounded-2xl hover:border-slate-800 transition duration-300">
-        <div class="text-2xl mb-4 bg-slate-900 w-12 h-12 flex items-center justify-center rounded-xl border border-slate-800 group-hover:bg-blue-600/10 transition">⚙️</div>
-        <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">IT Support Automation</h3>
-        <p class="text-slate-400 text-sm mt-3 leading-relaxed">Transitioning legacy manual company operations into high-speed digital engines with automated transaction logic.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-900">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      <div>
-        <h2 class="text-xs uppercase text-blue-400 font-bold tracking-widest">Ready to Build?</h2>
-        <p class="text-3xl font-black tracking-tight mt-2 text-white">Let's Discuss Your System Requirements</p>
-        <p class="text-slate-400 text-sm mt-4 leading-relaxed max-w-md">
-          Whether you need a custom billing engine for an office client, robust database setups, or remote server migrations, let us know your requirements. We engineer stable systems built to scale.
-        </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
         
-        <div class="mt-8 space-y-3">
-          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
-            <span class="text-blue-500 font-bold">✓</span> <span>Direct System Architect Consultation</span>
+        <div onclick="toggleActiveCard(this, 'blue')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-blue-600 dark:hover:border-blue-500 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-blue-600 dark:text-blue-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-blue-600 dark:group-hover:border-blue-500/50 transition-all duration-300">🌐</div>
+          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-blue-600 dark:group-hover:text-blue-400">Infrastructure & Cloud</h3>
+          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> Enterprise Servers Support</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> VPS & Storage Solutions</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> Web Hosting & Domains</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-blue-500 font-mono mr-3 text-lg transition-colors">▪</span> IaaS, PaaS, & SaaS Setup</li>
+          </ul>
+        </div>
+
+        <div onclick="toggleActiveCard(this, 'indigo')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-indigo-600 dark:hover:border-indigo-500 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-indigo-600 dark:group-hover:border-indigo-500/50 transition-all duration-300">🛡️</div>
+          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Network & Security</h3>
+          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Structured Cabling Matrix</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Firewalls & Endpoints</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> SIEM & SOC Monitoring</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Routing & Switching Matrix</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-indigo-500 font-mono mr-3 text-lg transition-colors">▪</span> Website & Hosting Security</li>
+          </ul>
+        </div>
+
+        <div onclick="toggleActiveCard(this, 'emerald')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-emerald-600 dark:hover:border-emerald-500 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-emerald-600 dark:text-emerald-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-emerald-600 dark:group-hover:border-emerald-500/50 transition-all duration-300">👁️</div>
+          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400">Visual Intelligence</h3>
+          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> AI-Powered CCTV Systems</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Biometric Access Control</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Surveillance Analytics</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> IP Telephony & VoIP links</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-emerald-500 font-mono mr-3 text-lg transition-colors">▪</span> Security Hardware Setup</li>
+          </ul>
+        </div>
+
+        <div onclick="toggleActiveCard(this, 'rose')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-rose-600 dark:hover:border-rose-500 shadow-lg hover:shadow-2xl hover:shadow-rose-500/20 dark:hover:shadow-rose-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-rose-600 dark:text-rose-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-rose-600 dark:group-hover:border-rose-500/50 transition-all duration-300">🔥</div>
+          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-rose-600 dark:group-hover:text-rose-400">Branding & Growth</h3>
+          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Corporate Branding & ID</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Social Media Management</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Strategic Campaigns</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> Creative Artwork Design</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-rose-500 font-mono mr-3 text-lg transition-colors">▪</span> SEO & Local Visibility</li>
+          </ul>
+        </div>
+
+        <div onclick="toggleActiveCard(this, 'amber')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.10] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 hover:border-amber-600 dark:hover:border-amber-500 shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 dark:hover:shadow-amber-500/30 transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
+          <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 text-amber-600 dark:text-amber-400 w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 group-hover:border-amber-600 dark:group-hover:border-amber-500/50 transition-all duration-300">⚙️</div>
+          <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 group-hover:text-2xl group-hover:text-amber-600 dark:group-hover:text-amber-400">Managed Services</h3>
+          <ul class="text-zinc-600 dark:text-slate-400 text-base mt-5 space-y-4 font-bold tracking-tight">
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> NOC Operations Center</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> 24/7 System Monitoring</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> Professional Corporate Email</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> IT Consultancy & Audit</li>
+            <li class="flex items-center"><span class="text-zinc-400 dark:text-slate-600 group-hover:text-amber-500 font-mono mr-3 text-lg transition-colors">▪</span> Disaster Recovery Loops</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-slate-800">
+      <div class="mb-16 select-none max-w-max">
+        <h2 class="text-xs uppercase text-zinc-500 dark:text-blue-400 font-bold tracking-widest">Enterprise Case Studies</h2>
+        <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Deployed Architectures & Implementations</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-blue-500 transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80" alt="Server Operations" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+          <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
+            <span class="text-xs font-mono font-bold text-blue-400 uppercase">Infrastructure hardening</span>
+            <h4 class="text-lg font-black text-white mt-1">Linux Server Array Migration</h4>
           </div>
-          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
-            <span class="text-blue-500 font-bold">✓</span> <span>Fully Clean & Documented Source Repositories</span>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-indigo-500 transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Cloud Network Dashboard" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+          <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
+            <span class="text-xs font-mono font-bold text-indigo-400 uppercase">Cloud Software Deployment</span>
+            <h4 class="text-lg font-black text-white mt-1">Automated Custom POS Backend</h4>
           </div>
-          <div class="flex items-center space-x-3 text-xs font-mono text-slate-400">
-            <span class="text-blue-500 font-bold">✓</span> <span>Automated Cloud Redundancy Schemes</span>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-slate-800 aspect-square bg-slate-950 cursor-pointer shadow-lg hover:border-emerald-500 transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Enterprise Platform Architecture" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+          <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent">
+            <span class="text-xs font-mono font-bold text-emerald-400 uppercase">Database Architecture</span>
+            <h4 class="text-lg font-black text-white mt-1">High-Availability ERP Routing</h4>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="bg-brandPanel border border-slate-900 p-8 rounded-2xl shadow-xl">
-        <form class="space-y-5">
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Your Name / Organization</label>
-            <input type="text" placeholder="Enter your name" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono">
-          </div>
-          
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Email Address</label>
-            <input type="email" placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono">
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Project Classification</label>
-            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-400 focus:outline-none focus:border-blue-500 transition font-mono">
-              <option>Custom POS / Billing Systems</option>
-              <option>Linux Server Management</option>
-              <option>Network Infrastructure Hardening</option>
-              <option>Cloud Architecture Planning</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Brief Project Overview</label>
-            <textarea rows="4" placeholder="Describe the application features or system scope..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition font-mono resize-none"></textarea>
-          </div>
-
-          <button type="button" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-600/10 transition text-sm">
-            Submit Technical Request &rarr;
-          </button>
-        </form>
+    <section id="quotation" class="max-w-4xl mx-auto px-6 py-24 border-t border-zinc-200 dark:border-slate-800 text-center">
+      <div class="p-12 bg-white/80 dark:bg-brandPanel/80 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl shadow-xl backdrop-blur-md hover:border-blue-500 transition-all duration-300">
+        <h2 class="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">Get a Quotation</h2>
+        <p class="text-zinc-600 dark:text-slate-400 text-base max-w-xl mx-auto mt-4 leading-relaxed">
+          Configure your network parameters, select workforce scope variables, and compute an enterprise deployment estimate instantly inside our standalone requirement gathering tab.
+        </p>
+        <div class="mt-8">
+          <a href="quote-portal.html" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/20 transition text-sm hover:scale-[1.03] active:scale-[0.97]">
+            Launch Requirement Gathering Engine &rarr;
+          </a>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <footer class="border-t border-slate-900 bg-brandDark py-12 text-center text-xs text-slate-500">
+  <footer class="border-t border-zinc-200 dark:border-slate-900 bg-zinc-200/40 dark:bg-brandDark py-12 text-center text-xs text-slate-500 relative z-10">
     <p>&copy; 2026 JK Techscope Solutions. All Infrastructure Rights Reserved.</p>
-    <p class="mt-2 text-slate-600">jktechscope.lk</p>
+    <p class="mt-2 text-zinc-400 dark:text-slate-600">jktechscope.lk</p>
   </footer>
 
+  <script>
+    function toggleActiveCard(element, colorTheme) {
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.classList.remove(
+          'border-blue-500', 'border-indigo-500', 'border-emerald-500', 'border-rose-500', 'border-amber-500', 
+          'scale-[1.08]', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]'
+        );
+        const innerTitle = card.querySelector('h3');
+        innerTitle.classList.remove('text-2xl', 'text-blue-500', 'text-indigo-500', 'text-emerald-500', 'text-rose-500', 'text-amber-500');
+      });
+
+      let themeColorClass = '';
+      let glowClass = '';
+      if(colorTheme === 'blue') { themeColorClass = 'text-blue-500'; glowClass = 'shadow-[0_0_30px_rgba(59,130,246,0.4)] border-blue-500'; }
+      if(colorTheme === 'indigo') { themeColorClass = 'text-indigo-500'; glowClass = 'shadow-[0_0_30px_rgba(99,102,241,0.4)] border-indigo-500'; }
+      if(colorTheme === 'emerald') { themeColorClass = 'text-emerald-500'; glowClass = 'shadow-[0_0_30px_rgba(16,185,129,0.4)] border-emerald-500'; }
+      if(colorTheme === 'rose') { themeColorClass = 'text-rose-500'; glowClass = 'shadow-[0_0_30px_rgba(244,63,94,0.4)] border-rose-500'; }
+      if(colorTheme === 'amber') { themeColorClass = 'text-amber-500'; glowClass = 'shadow-[0_0_30px_rgba(245,158,11,0.4)] border-amber-500'; }
+
+      element.classList.add(...glowClass.split(' '), 'scale-[1.08]');
+      const activeTitle = element.querySelector('h3');
+      activeTitle.classList.add('text-2xl', themeColorClass);
+    }
+
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleSunIcon = document.getElementById('theme-toggle-sun-icon');
+    const themeToggleMoonIcon = document.getElementById('theme-toggle-moon-icon');
+
+    if (document.documentElement.classList.contains('dark')) {
+      themeToggleSunIcon.classList.remove('hidden');
+    } else {
+      themeToggleMoonIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleSunIcon.classList.toggle('hidden');
+      themeToggleMoonIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>
