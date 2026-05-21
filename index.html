@@ -36,8 +36,8 @@
 
   <style>
     @keyframes grid-travel {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0; }
-      100% { background-position: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px; }
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(50px, 50px, 0); }
     }
 
     @keyframes glow-pulse {
@@ -51,25 +51,47 @@
       100% { background-position: 0% 50%; }
     }
 
-    .cyber-artwork-live {
-      background-size: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px !important;
+    /* SOLID DEPLOYMENT FIX: The background canvas now sits on its own hardware-isolated compositor layer */
+    .cyber-artwork-live::before {
+      content: "";
+      position: fixed;
+      inset: -100px;
+      z-index: -10;
+      pointer-events: none;
+      background-size: 50px 50px !important;
       background-image: 
-        linear-gradient(to right, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
-        linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
-      animation: grid-travel 10s linear infinite !important;
+        linear-gradient(to right, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.08) 1px, transparent 1px) !important;
+      will-change: transform;
     }
     
-    html.dark .cyber-artwork-live {
+    html.dark .cyber-artwork-live::before {
       background-image: 
-        linear-gradient(to right, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
-        linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px) !important;
+        linear-gradient(to right, rgba(59, 130, 246, 0.16) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.16) 1px, transparent 1px) !important;
     }
 
-    .live-glow-core { animation: glow-pulse 5s ease-in-out infinite; }
+    /* HIGH-PERFORMANCE MEDIA INTERRUPT: Only activate continuous CSS calculations on desktop screens to protect mobile CPU scores */
+    @media (min-width: 1024px) {
+      .cyber-artwork-live::before {
+        background-size: 50px 50px, 50px 50px, 12.5px 12.5px, 12.5px 12.5px !important;
+        background-image: 
+          linear-gradient(to right, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(15, 23, 42, 0.12) 1px, transparent 1px),
+          linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+        animation: grid-travel 12s linear infinite !important;
+      }
+      html.dark .cyber-artwork-live::before {
+        background-image: 
+          linear-gradient(to right, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
+          linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px) !important;
+      }
+    }
+
+    .live-glow-core { animation: glow-pulse 5s ease-in-out infinite; will-change: transform, opacity; }
 
     .live-color-pulse-bg {
       background-size: 400% 400% !important;
@@ -86,7 +108,7 @@
     <button onclick="openAdminPortalModal()" class="w-14 h-14 bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center rounded-full shadow-lg border border-slate-700/50 hover:scale-110 active:scale-95 transition-all duration-300 group" title="Launch Administrative Node Override" aria-label="Open Administrative System CMS Control Panel Modal">
       <span class="text-xl group-hover:rotate-45 transition-transform duration-300">⚙</span>
     </button>
-    <a href="https://api.whatsapp.com/send?phone=94771234567&text=Hi%20JK%20Techscope%20Solutions!%20I%20just%20audited%20your%20digital%20architecture%20platform%20and%20want%20to%20discuss%20an%20enterprise%20systems%20project." target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 active:scale Discover B2B Tools" title="Connect instantly on WhatsApp" aria-label="Open WhatsApp Support Link">
+    <a href="https://api.whatsapp.com/send?phone=94771234567&text=Hi%20JK%20Techscope%20Solutions!%20I%20just%20audited%20your%20digital%20architecture%20platform%20and%20want%20to%20discuss%20an%20enterprise%20systems%20project." target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300" title="Connect instantly on WhatsApp" aria-label="Open WhatsApp Support Link">
       <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.632-1.023-5.105-2.887-6.971C16.526 1.916 14.058.892 11.43.891c-5.438 0-9.863 4.421-9.867 9.854-.001 1.73.473 3.415 1.371 4.904L1.93 21.054l5.717-1.5c1.511.824 3.1 1.258 4.7 1.26h.001zM17.5 15.3c-.3-.15-1.775-.875-2.05-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.018-.463.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525C9.35 9.625 8.75 8.175 8.5 7.575c-.243-.585-.49-.506-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8 1.05c-.275.975-1.05 3.1-1.15 3.3-.1.2-.2.425-.05.725.15.3.675 2.59 2.76 3.484.496.213.882.34 1.185.437.5.16.955.137 1.315.083.4-.06 1.775-.725 2.025-1.39.25-.665.25-1.235.175-1.35-.075-.115-.275-.165-.575-.315z"/></svg>
     </a>
   </div>
@@ -283,7 +305,7 @@
           <input type="password" id="admin-key-input" aria-labelledby="lbl-admin-key" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
           <button onclick="validateRoleAccessCredentials()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-lg transition text-sm font-mono tracking-widest uppercase">Authorize Access Tier &rarr;</button>
           <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-600 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-200 dark:border-slate-800/80">
-            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Injection, Deletion & Undo)</p>
+            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Dynamic Delete)</p>
           </div>
         </div>
       </div>
@@ -337,12 +359,8 @@
     </div>
   </div>
 
-  <footer class="border-t border-zinc-200 dark:border-slate-900 bg-zinc-200/40 dark:bg-brandDark py-12 text-center text-xs text-slate-500 relative z-10">
-    <p>&copy; 2026 JK Techscope Solutions. All Infrastructure Rights Reserved.</p>
-    <p class="mt-2 text-zinc-400 dark:text-slate-600">jktechscope.lk</p>
-  </footer>
-
   <script>
+    // DATA BASE ARRAY MODELS
     let enterpriseServicesMatrix = [
       {
         id: "p1",
@@ -386,7 +404,7 @@
     let undoToastTimeoutContainer = null;
     let undoCountdownTimerInterval = null;
 
-    // CORE COMPILER ENGINE LOOP RENDER ARRAYS
+    // THE DRAW COMPILER ENGINE GRAPHICS RENDERING HUB
     function renderCmsDynamicServiceGrid() {
       const gridRoot = document.getElementById('cms-service-grid-root');
       if (!gridRoot) return;
@@ -457,12 +475,12 @@
       });
     }
 
-    // WINDOW STEADY LOAD GATE
+    // DELAY SYNCHRONOUS BINDING STABILIZATION LOGIC
     window.onload = function() {
       renderCmsDynamicServiceGrid();
     };
 
-    // GRANULAR INTERACTIVE MUTATIONS DETECTORS
+    // GRANULAR CRUD DECK CONTROLLERS
     function appendSingleBulletFromInlineCard(cardIndex) {
       const inlineInput = document.getElementById(`inline-input-${cardIndex}`);
       if (!inlineInput) return;
@@ -491,7 +509,7 @@
       triggerEmergencyUndoToastNotification(`"${targetedColumnNode.title}" Column Dropped`);
     }
 
-    // THE 15-SECOND DELAY RESCUE SUB-MODULE
+    // MASSIVE 15s RESCUE ENGINE COUNTERS
     function triggerEmergencyUndoToastNotification(messageLabel) {
       const toast = document.getElementById('undo-toast-banner');
       const title = document.getElementById('undo-toast-title');
@@ -534,7 +552,7 @@
       document.getElementById('cms-input-title').value = ''; document.getElementById('cms-input-icon').value = ''; document.getElementById('cms-input-bullets').value = '';
     }
 
-    // MANAGEMENT PORT SECURITY ROUTINES
+    // SECURITY RBAC MATRIX CONTROLLERS
     const adminOverlay = document.getElementById('admin-portal-overlay');
     const adminInnerCard = adminOverlay ? adminOverlay.querySelector('.relative') : null;
     function openAdminPortalModal() { document.body.classList.add('overflow-hidden'); if(adminOverlay) adminOverlay.classList.remove('hidden'); setTimeout(() => { if(adminOverlay) { adminOverlay.classList.remove('opacity-0'); adminOverlay.classList.add('opacity-100'); } if(adminInnerCard) { adminInnerCard.classList.remove('scale-95'); adminInnerCard.classList.add('scale-100'); } }, 10); }
@@ -574,7 +592,7 @@
       renderCmsDynamicServiceGrid(); closeAdminPortalModal();
     }
 
-    // WIZARD SYSTEMS HANDLERS
+    // WIZARDS TOGGLES CONFIGS
     const modalOverlayContainer = document.getElementById('quote-modal-overlay');
     const modalInnerCardContainer = modalOverlayContainer ? modalOverlayContainer.querySelector('.relative') : null;
     function openQuoteModal() { document.body.classList.add('overflow-hidden'); if(modalOverlayContainer) modalOverlayContainer.classList.remove('hidden'); setTimeout(() => { if(modalOverlayContainer) { modalOverlayContainer.classList.remove('opacity-0'); modalOverlayContainer.classList.add('opacity-100'); } if(modalInnerCardContainer) { modalInnerCardContainer.classList.remove('scale-95'); modalInnerCardContainer.classList.add('scale-100'); } }, 10); }
