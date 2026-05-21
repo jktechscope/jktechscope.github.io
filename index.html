@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>JK Techscope Solutions | Enterprise Cloud & Systems Infrastructure</title>
+  <meta name="description" content="JK Techscope Solutions designs, builds, and deploys next-gen enterprise containerized cloud architectures, custom billing POS networks, and robust hardened network security matrices.">
+  <meta name="keywords" content="JK Techscope, Cloud Infrastructure, POS Networks, Network Hardening, Linux Systems Management, Managed IT Support">
+  <meta name="author" content="JK Techscope Solutions">
   <link rel="icon" type="image/png" href="favicon.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -75,10 +80,10 @@
   <div class="live-glow-core absolute top-0 left-1/2 w-full max-w-7xl h-[800px] bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent dark:from-blue-500/35 dark:via-purple-500/15 dark:to-transparent rounded-full blur-3xl pointer-events-none z-0"></div>
 
   <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3 select-none filter drop-shadow-2xl">
-    <button onclick="openAdminPortalModal()" class="w-14 h-14 bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center rounded-full shadow-lg border border-slate-700/50 hover:scale-110 active:scale-95 transition-all duration-300 group" title="Launch Administrative Node Override">
+    <button onclick="openAdminPortalModal()" class="w-14 h-14 bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center rounded-full shadow-lg border border-slate-700/50 hover:scale-110 active:scale-95 transition-all duration-300 group" title="Launch Administrative Node Override" aria-label="Open Administrative System CMS Control Panel Modal">
       <span class="text-xl group-hover:rotate-45 transition-transform duration-300">⚙</span>
     </button>
-    <a href="https://api.whatsapp.com/send?phone=94771234567&text=Hi%20JK%20Techscope%20Solutions!%20I%20just%20audited%20your%20digital%20architecture%20platform%20and%20want%20to%20discuss%20an%20enterprise%20systems%20project." target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300" title="Connect instantly on WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=94771234567&text=Hi%20JK%20Techscope%20Solutions!%20I%20just%20audited%20your%20digital%20architecture%20platform%20and%20want%20to%20discuss%20an%20enterprise%20systems%20project." target="_blank" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300" title="Connect instantly on WhatsApp" aria-label="Open WhatsApp Support Link">
       <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.632-1.023-5.105-2.887-6.971C16.526 1.916 14.058.892 11.43.891c-5.438 0-9.863 4.421-9.867 9.854-.001 1.73.473 3.415 1.371 4.904L1.93 21.054l5.717-1.5c1.511.824 3.1 1.258 4.7 1.26h.001zM17.5 15.3c-.3-.15-1.775-.875-2.05-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.018-.463.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525C9.35 9.625 8.75 8.175 8.5 7.575c-.243-.585-.49-.506-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8 1.05c-.275.975-1.05 3.1-1.15 3.3-.1.2-.2.425-.05.725.15.3.675 2.59 2.76 3.484.496.213.882.34 1.185.437.5.16.955.137 1.315.083.4-.06 1.775-.725 2.025-1.39.25-.665.25-1.235.175-1.35-.075-.115-.275-.165-.575-.315z"/></svg>
     </a>
   </div>
@@ -114,7 +119,7 @@
           <button onclick="openQuoteModal()" class="px-5 py-3 text-zinc-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-xl transition-all duration-300 uppercase font-bold tracking-wider">Quotation Engine</button>
           <span id="active-role-badge" class="px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold tracking-wide border border-zinc-300/40 dark:border-slate-700/40 text-blue-400">Role: Visitor</span>
         </div>
-        <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition">
+        <button id="theme-toggle" type="button" class="text-zinc-600 dark:text-slate-400 hover:bg-zinc-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl p-3 border border-zinc-200 dark:border-slate-800 transition" aria-label="Toggle structural theme">
           <svg id="theme-toggle-sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 7a3 3 0 100 6 3 3 0 000-6zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 11-2 0V3a1 1 0 011-1zm4 2a1 1 0 01.707.293l.707.707a1 1 0 11-1.414 1.414l-.707-.707A1 1 0 0114 4zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zm11.707-4.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM16 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-1.707 4.707a1 1 0 00-1.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 16a1 1 0 11-2 0v-1a1 1 0 11-2 0v1zm-4.293-2.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
           <svg id="theme-toggle-moon-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         </button>
@@ -142,7 +147,7 @@
         <p class="text-3xl font-black tracking-tight mt-2 text-zinc-900 dark:text-white">Engineered for Scalability and Speed</p>
       </div>
 
-      <div id="cms-service-grid-root" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+      <div id="cms-service-grid-root" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-7xl xl:grid-cols-5 gap-6 mx-auto">
         </div>
     </section>
 
@@ -198,9 +203,15 @@
         <div class="lg:col-span-5 bg-white/90 dark:bg-brandPanel/90 border-2 border-zinc-200 dark:border-slate-800 p-6 md:p-8 rounded-2xl shadow-xl backdrop-blur-md">
           <h3 class="text-lg font-black text-zinc-900 dark:text-white tracking-tight mb-2">Submit Systems Feedback</h3>
           <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-4">
-            <input type="text" name="client_title" required placeholder="e.g., Systems Engineer" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
-            <input type="text" name="company_context" required placeholder="Corporate Context" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
-            <textarea name="feedback_message" required rows="3" placeholder="Operational statement details..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono resize-none"></textarea>
+            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-client-title">Client Designation</label>
+            <input type="text" name="client_title" aria-labelledby="label-client-title" required placeholder="e.g., Systems Engineer" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            
+            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-company-context">Corporate Entity Environment</label>
+            <input type="text" name="company_context" aria-labelledby="label-company-context" required placeholder="Corporate Context" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono">
+            
+            <label class="block text-xs font-mono text-zinc-400 mb-1" id="label-feedback-message">Project Review Notes</label>
+            <textarea name="feedback_message" aria-labelledby="label-feedback-message" required rows="3" placeholder="Operational statement details..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-3 text-sm text-zinc-900 dark:text-white rounded-xl placeholder-zinc-400/50 focus:border-blue-500 transition font-mono resize-none"></textarea>
+            
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl shadow-lg text-xs uppercase tracking-wider">Transmit Log &rarr;</button>
           </form>
         </div>
@@ -214,7 +225,6 @@
         <div class="mt-8"><button onclick="openQuoteModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition text-sm">Launch Requirement Gathering Engine &rarr;</button></div>
       </div>
     </section>
-
   </main>
 
   <div id="quote-modal-overlay" class="fixed inset-0 z-50 overflow-y-auto hidden bg-gradient-to-br from-slate-950/80 via-blue-950/80 to-slate-950/80 dark:from-blue-950/80 dark:via-purple-950/80 dark:to-indigo-950/80 live-color-pulse-bg backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 transition-all duration-500 opacity-0 transform-gpu">
@@ -228,12 +238,27 @@
           <div class="lg:col-span-7 space-y-6">
             <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" id="feedback-company" placeholder="Organization Identity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
-                <input type="text" id="feedback-name" placeholder="Requester Full Name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                <div>
+                  <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-org">Organization Identity</label>
+                  <input type="text" id="feedback-company" aria-labelledby="modal-lbl-org" placeholder="Organization Identity" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-name">Requester Name</label>
+                  <input type="text" id="feedback-name" aria-labelledby="modal-lbl-name" placeholder="Requester Full Name" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+                </div>
               </div>
-              <input type="email" id="feedback-email" placeholder="Business Email" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
-              <select id="modal-employee-scalar" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Micro Team" data-multiply="1.0">Micro Team Layer (1 - 10 nodes)</option><option value="Enterprise Cluster" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50%)</option></select>
-              <select id="modal-architecture-base" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Linux Server Setup" data-base="300">Linux Server Setup & Management ($300/mo)</option><option value="Custom CloudPOS" data-base="450">Custom CloudPOS Web Architecture ($450/mo)</option></select>
+              <div>
+                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-email">Corporate Mail Channel</label>
+                <input type="email" id="feedback-email" aria-labelledby="modal-lbl-email" placeholder="Business Email" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-base rounded-xl placeholder-zinc-400/60 outline-none focus:border-blue-500 transition font-mono">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-scalar">Workforce Vector Scope</label>
+                <select id="modal-employee-scalar" aria-labelledby="modal-lbl-scalar" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Micro Team" data-multiply="1.0">Micro Team Layer (1 - 10 nodes)</option><option value="Enterprise Cluster" data-multiply="1.5">Enterprise Cluster Node (51 - 200 nodes / +50%)</option></select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="modal-lbl-blueprint">Architecture Base Framework</label>
+                <select id="modal-architecture-base" aria-labelledby="modal-lbl-blueprint" class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-sm rounded-xl outline-none focus:border-blue-500 font-mono cursor-pointer"><option value="Linux Server Setup" data-base="300">Linux Server Setup & Management ($300/mo)</option><option value="Custom CloudPOS" data-base="450">Custom CloudPOS Web Architecture ($450/mo)</option></select>
+              </div>
               <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg transition text-sm">Transmit Formal Requirements &rarr;</button>
             </form>
           </div>
@@ -251,10 +276,11 @@
       <div id="admin-auth-panel" class="max-w-md mx-auto py-8">
         <h3 class="text-2xl font-black tracking-tight mb-2 text-center text-zinc-900 dark:text-white">Access Key Gateway Authentication</h3>
         <div class="space-y-4 mt-6">
-          <input type="password" id="admin-key-input" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
+          <label class="block text-xs font-mono text-zinc-400 mb-1" id="lbl-admin-key">System Passkey String</label>
+          <input type="password" id="admin-key-input" aria-labelledby="lbl-admin-key" placeholder="Enter Role Authorization Key..." class="w-full bg-zinc-50 dark:bg-slate-950 border-2 border-zinc-200 dark:border-slate-800 p-4 text-center rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 focus:border-blue-500 outline-none font-mono tracking-widest">
           <button onclick="validateRoleAccessCredentials()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-lg transition text-sm font-mono tracking-widest uppercase">Authorize Access Tier &rarr;</button>
           <div class="text-[10px] font-mono text-center text-zinc-500 dark:text-slate-600 bg-zinc-100 dark:bg-slate-950 p-3 rounded-lg border border-zinc-200 dark:border-slate-800/80">
-            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Injection, Deletion & Undo)</p>
+            <p>🔑 Access Keys: <span class="text-amber-500 font-bold">manager123</span> (Read) | <span class="text-emerald-500 font-bold">admin123</span> (Full CRUD Dynamic Delete)</p>
           </div>
         </div>
       </div>
@@ -276,20 +302,29 @@
         <div id="cms-write-only-panel" class="bg-zinc-50 dark:bg-slate-950 p-6 rounded-2xl border-2 border-zinc-200 dark:border-slate-900 space-y-4">
           <p class="text-xs uppercase font-mono tracking-wider font-black text-emerald-500">Build Brand New Card Container</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <select id="cms-target-pillar" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl font-mono text-zinc-800 dark:text-slate-200 outline-none">
-              <option value="blue">🌐 Infrastructure & Cloud</option>
-              <option value="indigo">🛡️ Network & Security</option>
-              <option value="emerald">👁️ Visual Intelligence</option>
-              <option value="rose">🔥 Branding & Growth</option>
-              <option value="amber">⚙️ Managed Services</option>
-            </select>
-            <input type="text" id="cms-input-title" placeholder="New Column Blueprint Title" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
-            <input type="text" id="cms-input-icon" placeholder="Emoji Icon Placeholder (e.g. ⚡)" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
+            <div>
+              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-theme">Pillar Visual Color</label>
+              <select id="cms-target-pillar" aria-labelledby="lbl-cms-theme" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl font-mono text-zinc-800 dark:text-slate-200 outline-none">
+                <option value="blue">🌐 Infrastructure & Cloud</option>
+                <option value="indigo">🛡️ Network & Security</option>
+                <option value="emerald">👁️ Visual Intelligence</option>
+                <option value="rose">🔥 Branding & Growth</option>
+                <option value="amber">⚙️ Managed Services</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-title">Blueprint Column Title</label>
+              <input type="text" id="cms-input-title" aria-labelledby="lbl-cms-title" placeholder="New Column Blueprint Title" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
+            </div>
+            <div>
+              <label class="block text-[11px] font-mono text-zinc-400 mb-1" id="lbl-cms-icon">Main Engine Glyph</label>
+              <input type="text" id="cms-input-icon" aria-labelledby="lbl-cms-icon" placeholder="Emoji Icon Placeholder (e.g. ⚡)" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-3 text-xs rounded-xl text-zinc-900 dark:text-white font-mono outline-none">
+            </div>
           </div>
 
           <div class="space-y-2">
-            <label class="block text-[11px] font-mono font-bold text-zinc-500 dark:text-slate-400">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
-            <input type="text" id="cms-input-bullets" placeholder="Feature One, Feature Two, Feature Three, Feature Four" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-4 text-xs rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 font-mono outline-none">
+            <label class="block text-[11px] font-mono font-bold text-zinc-500 dark:text-slate-400" id="lbl-cms-bullets">Pillar Operational Bullet Metrics (Comma-Separated Array Strings)</label>
+            <input type="text" id="cms-input-bullets" aria-labelledby="lbl-cms-bullets" placeholder="Feature One, Feature Two, Feature Three, Feature Four" class="w-full bg-white dark:bg-brandPanel border border-zinc-300 dark:border-slate-800 p-4 text-xs rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 font-mono outline-none">
           </div>
 
           <button onclick="commitCmsInjectedNodeToArray()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3.5 rounded-xl uppercase tracking-wider shadow-md transition font-mono">Deploy Entire New Pillar Column &rarr;</button>
@@ -299,12 +334,10 @@
     </div>
   </div>
 
-  <footer class="border-t border-zinc-200 dark:border-slate-900 bg-zinc-200/40 dark:bg-brandDark py-12 text-center text-xs text-slate-500 relative z-10">
-    <p>&copy; 2026 JK Techscope Solutions. All Infrastructure Rights Reserved.</p>
-    <p class="mt-2 text-zinc-400 dark:text-slate-600">jktechscope.lk</p>
-  </footer>
-
   <script>
+    // ------------------------------------------
+    // SUB-BLOCK A: PLATFORM DATA STATE MACHINE MODULE
+    // ------------------------------------------
     let enterpriseServicesMatrix = [
       {
         id: "p1",
@@ -344,13 +377,13 @@
     ];
 
     let activeClientSessionRole = "Visitor";
-
-    // CORE CACHE BACKUP HOOK VARIABLES FOR STABLE UNDO DELETIONS (EXTENDED TIMER CONTROL SYSTEM)
     let lastDeletedItemSnapshot = null; 
     let undoToastTimeoutContainer = null;
     let undoCountdownTimerInterval = null;
 
-    // THE DRAW COMPILER GRAPHICS ENGINE LOOP
+    // ------------------------------------------
+    // SUB-BLOCK B: COMPILER DRAW GRID GENERATORS
+    // ------------------------------------------
     function renderCmsDynamicServiceGrid() {
       const gridRoot = document.getElementById('cms-service-grid-root');
       if (!gridRoot) return;
@@ -360,24 +393,24 @@
       enterpriseServicesMatrix.forEach((node, cardIndex) => {
         let borderClass = ''; let shadowClass = ''; let iconBorder = ''; let bulletSpan = ''; let iconColors = ''; let textHover = '';
 
-        if(node.theme === 'blue') { iconColors = 'text-blue-600 dark:text-blue-400'; textHover='group-hover:text-blue-600 dark:group-hover:text-blue-400'; borderClass='hover:border-blue-600 dark:hover:border-blue-500'; shadowClass='hover:shadow-blue-500/20 dark:hover:shadow-blue-500/30'; iconBorder='group-hover:border-blue-600'; bulletSpan='group-hover:text-blue-500'; }
-        if(node.theme === 'indigo') { iconColors = 'text-indigo-600 dark:text-indigo-400'; textHover='group-hover:text-indigo-600 dark:group-hover:text-indigo-400'; borderClass='hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-500'; }
-        if(node.theme === 'emerald') { iconColors = 'text-emerald-600 dark:text-emerald-400'; textHover='group-hover:text-emerald-600 dark:group-hover:text-emerald-400'; borderClass='hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/30'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-500'; }
-        if(node.theme === 'rose') { iconColors = 'text-rose-600 dark:text-rose-400'; textHover='group-hover:text-rose-600 dark:group-hover:text-rose-400'; borderClass='hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20 dark:hover:shadow-rose-500/30'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-500'; }
-        if(node.theme === 'amber') { iconColors = 'text-amber-600 dark:text-amber-400'; textHover='group-hover:text-amber-600 dark:group-hover:text-amber-400'; borderClass='hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20 dark:hover:shadow-amber-500/30'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-500'; }
+        if(node.theme === 'blue') { iconColors = 'text-blue-600 dark:text-blue-400'; textHover='group-hover:text-blue-600 dark:group-hover:text-blue-400'; borderClass='hover:border-blue-600 dark:hover:border-blue-500'; shadowClass='hover:shadow-blue-500/20'; iconBorder='group-hover:border-blue-600'; bulletSpan='group-hover:text-blue-500'; }
+        if(node.theme === 'indigo') { iconColors = 'text-indigo-600 dark:text-indigo-400'; textHover='group-hover:text-indigo-600 dark:group-hover:text-indigo-400'; borderClass='hover:border-indigo-600 dark:hover:border-indigo-500'; shadowClass='hover:shadow-indigo-500/20'; iconBorder='group-hover:border-indigo-600'; bulletSpan='group-hover:text-indigo-500'; }
+        if(node.theme === 'emerald') { iconColors = 'text-emerald-600 dark:text-emerald-400'; textHover='group-hover:text-emerald-600 dark:group-hover:text-emerald-400'; borderClass='hover:border-emerald-600 dark:hover:border-emerald-500'; shadowClass='hover:shadow-emerald-500/20'; iconBorder='group-hover:border-emerald-600'; bulletSpan='group-hover:text-emerald-500'; }
+        if(node.theme === 'rose') { iconColors = 'text-rose-600 dark:text-rose-400'; textHover='group-hover:text-rose-600 dark:group-hover:text-rose-400'; borderClass='hover:border-rose-600 dark:hover:border-rose-500'; shadowClass='hover:shadow-rose-500/20'; iconBorder='group-hover:border-rose-600'; bulletSpan='group-hover:text-rose-500'; }
+        if(node.theme === 'amber') { iconColors = 'text-amber-600 dark:text-amber-400'; textHover='group-hover:text-amber-600 dark:group-hover:text-amber-400'; borderClass='hover:border-amber-600 dark:hover:border-amber-500'; shadowClass='hover:shadow-amber-500/20'; iconBorder='group-hover:border-amber-600'; bulletSpan='group-hover:text-amber-500'; }
 
         let bulletListHtml = '';
         node.bullets.forEach((bulletText, bulletIndex) => {
           let singleBulletKillToken = '';
           if (activeClientSessionRole === "Root Admin") {
             singleBulletKillToken = `
-              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" title="Remove capability item line">✕</button>
+              <button onclick="event.stopPropagation(); removeSingleBulletFromCard(${cardIndex}, ${bulletIndex})" class="ml-auto bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white p-1 rounded-md text-[10px] font-sans font-bold px-2 tracking-tighter transition-all" aria-label="Delete specific bullet list item detail string matching ${bulletText}">✕</button>
             `;
           }
           bulletListHtml += `
-            <li class="flex items-center text-zinc-600 dark:text-slate-400 py-1 px-1.5 rounded-lg hover:bg-slate-900/30">
-              <span class="text-zinc-400 dark:text-slate-600 ${bulletSpan} font-mono mr-3 text-lg transition-colors">▪</span>
-              <span class="text-sm font-bold tracking-tight">${bulletText}</span>
+            <li class="flex items-start text-zinc-600 dark:text-slate-400 py-1 px-1.5 rounded-lg hover:bg-slate-900/30 break-words max-w-full">
+              <span class="text-zinc-400 dark:text-slate-600 ${bulletSpan} font-mono mr-2 text-base flex-shrink-0 mt-0.5">▪</span>
+              <span class="text-xs font-bold tracking-tight leading-snug break-all overflow-hidden">${bulletText}</span>
               ${singleBulletKillToken}
             </li>
           `;
@@ -387,110 +420,92 @@
         let deleteButtonMarkup = '';
         if (activeClientSessionRole === "Root Admin") {
           inlineAddInputMarkup = `
-            <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-slate-800/60 flex space-x-2" onclick="event.stopPropagation();">
-              <input type="text" id="inline-input-${cardIndex}" placeholder="Add item..." class="flex-1 bg-zinc-100 dark:bg-slate-950 border border-zinc-300 dark:border-slate-800 text-xs px-2.5 py-1.5 rounded-xl text-zinc-900 dark:text-white font-mono outline-none focus:border-blue-500">
-              <button onclick="appendSingleBulletFromInlineCard(${cardIndex})" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition">&plus;</button>
+            <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-slate-800/60 flex flex-col space-y-1" onclick="event.stopPropagation();">
+              <label class="text-[9px] font-mono text-zinc-500">Append Node</label>
+              <div class="flex space-x-1.5">
+                <input type="text" id="inline-input-${cardIndex}" placeholder="Add..." class="flex-1 bg-zinc-100 dark:bg-slate-950 border border-zinc-300 dark:border-slate-800 text-[11px] px-2 py-1 rounded-lg text-zinc-900 dark:text-white font-mono min-w-0 outline-none">
+                <button onclick="appendSingleBulletFromInlineCard(${cardIndex})" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-lg transition" aria-label="Inject value string directly inside card list matrix">&plus;</button>
+              </div>
             </div>
           `;
           deleteButtonMarkup = `
-            <button onclick="event.stopPropagation(); deleteEntireServiceColumnNode(${cardIndex})" class="mt-4 w-full text-center bg-red-600/5 hover:bg-red-600 text-red-500 hover:text-white border border-red-500/20 py-2 rounded-xl text-[11px] font-mono font-bold tracking-wider transition-all duration-200">
-              🗑️ Delete Service Node
+            <button onclick="event.stopPropagation(); deleteEntireServiceColumnNode(${cardIndex})" class="mt-3 w-full text-center bg-red-600/5 hover:bg-red-600 text-red-500 hover:text-white border border-red-500/20 py-1.5 rounded-lg text-[10px] font-mono font-bold tracking-wider transition-all duration-200" aria-label="Wipe total node data">
+              🗑️ Delete Node
             </button>
           `;
         }
 
         const cardMarkupStr = `
-          <div onclick="toggleActiveCard(this, '${node.theme}')" class="service-card group p-6 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-3xl hover:rounded-xl hover:scale-[1.05] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 ${borderClass} shadow-lg hover:shadow-2xl ${shadowClass} transition-all duration-300 backdrop-blur-md cursor-pointer select-none">
-            <div class="text-2xl mb-4 bg-zinc-100 dark:bg-slate-950 ${iconColors} w-12 h-12 flex items-center justify-center rounded-2xl group-hover:rounded-md border-2 border-zinc-200 dark:border-slate-800 ${iconBorder} transition-all duration-300">${node.icon}</div>
-            <h3 class="text-xl font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 ${textHover}">${node.title}</h3>
-            <ul class="text-base mt-5 space-y-1.5 font-bold tracking-tight">
-              ${bulletListHtml}
-            </ul>
-            ${inlineAddInputMarkup}
-            ${deleteButtonMarkup}
+          <div onclick="toggleActiveCard(this, '${node.theme}')" class="service-card group p-5 bg-white/95 dark:bg-brandPanel/95 border-2 border-zinc-200 dark:border-slate-800 rounded-2xl hover:scale-[1.03] active:scale-[0.98] hover:bg-white dark:hover:bg-slate-900 ${borderClass} shadow-md hover:shadow-xl ${shadowClass} transition-all duration-300 backdrop-blur-md cursor-pointer select-none flex flex-col justify-between min-w-0 overflow-hidden w-full">
+            <div>
+              <div class="text-xl mb-3 bg-zinc-100 dark:bg-slate-950 ${iconColors} w-10 h-10 flex items-center justify-center rounded-xl border border-zinc-200 dark:border-slate-800 transition-all duration-300">${node.icon}</div>
+              <h3 class="text-base font-black tracking-tight text-zinc-900 dark:text-slate-200 transition-all duration-300 ${textHover} break-words max-w-full leading-tight mb-3">${node.title}</h3>
+              <ul class="space-y-1 max-w-full overflow-hidden">
+                ${bulletListHtml}
+              </ul>
+            </div>
+            <div>
+              ${inlineAddInputMarkup}
+              ${deleteButtonMarkup}
+            </div>
           </div>
         `;
         gridRoot.insertAdjacentHTML('beforeend', cardMarkupStr);
       });
     }
 
-    // INLINE BULLET WRITE BACK ACTION CONTROLLERS
+    // ------------------------------------------
+    // SUB-BLOCK C: ARCHITECTURE ASYNC DOM BINDING TIMERS
+    // ------------------------------------------
+    window.onload = function() {
+      renderCmsDynamicServiceGrid();
+    };
+
+    // ------------------------------------------
+    // SUB-BLOCK D: GRANULAR CRUD MUTATION CONTROLLERS
+    // ------------------------------------------
     function appendSingleBulletFromInlineCard(cardIndex) {
       const inlineInput = document.getElementById(`inline-input-${cardIndex}`);
       if (!inlineInput) return;
-
       const newBulletText = inlineInput.value.trim();
       if (!newBulletText) return;
-
       enterpriseServicesMatrix[cardIndex].bullets.push(newBulletText);
       renderCmsDynamicServiceGrid();
     }
 
-    // REMOVE SINGLE BULLET METRIC STRINGS LOGS
     function removeSingleBulletFromCard(cardIndex, bulletIndex) {
       if (activeClientSessionRole !== "Root Admin") return;
-      
       const targetedPillar = enterpriseServicesMatrix[cardIndex];
       const deletedStringValue = targetedPillar.bullets[bulletIndex];
-
-      lastDeletedItemSnapshot = {
-        type: "bullet",
-        cardIndex: cardIndex,
-        bulletIndex: bulletIndex,
-        data: deletedStringValue
-      };
-
+      lastDeletedItemSnapshot = { type: "bullet", cardIndex: cardIndex, bulletIndex: bulletIndex, data: deletedStringValue };
       targetedPillar.bullets.splice(bulletIndex, 1);
       renderCmsDynamicServiceGrid();
-
       triggerEmergencyUndoToastNotification(`"${deletedStringValue}" Wiped`);
     }
 
-    // ERASE WHOLE COLUMN CARD BLOCK
     function deleteEntireServiceColumnNode(targetIndex) {
       if (activeClientSessionRole !== "Root Admin") return;
-      
       const targetedColumnNode = enterpriseServicesMatrix[targetIndex];
-
-      lastDeletedItemSnapshot = {
-        type: "column",
-        index: targetIndex,
-        data: targetedColumnNode
-      };
-
+      lastDeletedItemSnapshot = { type: "column", index: targetIndex, data: targetedColumnNode };
       enterpriseServicesMatrix.splice(targetIndex, 1);
       renderCmsDynamicServiceGrid();
-
       triggerEmergencyUndoToastNotification(`"${targetedColumnNode.title}" Column Dropped`);
     }
 
-    // ========================================================================
-    // UPGRADED 15-SECOND TOAST CONTROLLER AND COUNTDOWN ALGORITHMS
-    // ========================================================================
+    // ------------------------------------------
+    // SUB-BLOCK E: 15-SECOND BACKUP SNAPSHOT COUNTER
+    // ------------------------------------------
     function triggerEmergencyUndoToastNotification(messageLabel) {
       const toast = document.getElementById('undo-toast-banner');
       const title = document.getElementById('undo-toast-title');
       const countdownCount = document.getElementById('undo-timer-count');
-      
-      clearTimeout(undoToastTimeoutContainer);
-      clearInterval(undoCountdownTimerInterval);
-
+      clearTimeout(undoToastTimeoutContainer); clearInterval(undoCountdownTimerInterval);
       title.textContent = messageLabel;
-      let runtimeSecondsRemaining = 15; // Comfortably extended to 15 seconds limit
-      countdownCount.textContent = runtimeSecondsRemaining;
-
+      let runtimeSecondsRemaining = 15; countdownCount.textContent = runtimeSecondsRemaining;
       toast.classList.remove('hidden', 'translate-y-[-150%]', 'opacity-0');
       toast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-
-      undoCountdownTimerInterval = setInterval(() => {
-        runtimeSecondsRemaining--;
-        countdownCount.textContent = runtimeSecondsRemaining;
-        if (runtimeSecondsRemaining <= 0) { clearInterval(undoCountdownTimerInterval); }
-      }, 1000);
-
-      undoToastTimeoutContainer = setTimeout(() => {
-        dismissEmergencyUndoToastUI();
-      }, 15000); // 15000 milliseconds runtime boundaries
+      undoCountdownTimerInterval = setInterval(() => { runtimeSecondsRemaining--; countdownCount.textContent = runtimeSecondsRemaining; if (runtimeSecondsRemaining <= 0) { clearInterval(undoCountdownTimerInterval); } }, 1000);
+      undoToastTimeoutContainer = setTimeout(() => { dismissEmergencyUndoToastUI(); }, 15000);
     }
 
     function dismissEmergencyUndoToastUI() {
@@ -500,67 +515,35 @@
       setTimeout(() => { lastDeletedItemSnapshot = null; }, 500);
     }
 
-    // RECALL LOGIC HANDLER FOR THE COUNTDOWN CLOCK OVERRIDE
     function executeEmergencyUndoOperation() {
       if (!lastDeletedItemSnapshot) return;
-
-      clearInterval(undoCountdownTimerInterval);
-      clearTimeout(undoToastTimeoutContainer);
-
-      if (lastDeletedItemSnapshot.type === "bullet") {
-        const targetCard = enterpriseServicesMatrix[lastDeletedItemSnapshot.cardIndex];
-        if (targetCard) {
-          targetCard.bullets.splice(lastDeletedItemSnapshot.bulletIndex, 0, lastDeletedItemSnapshot.data);
-        }
-      } 
-      else if (lastDeletedItemSnapshot.type === "column") {
-        enterpriseServicesMatrix.splice(lastDeletedItemSnapshot.index, 0, lastDeletedItemSnapshot.data);
-      }
-
-      renderCmsDynamicServiceGrid(); 
-      dismissEmergencyUndoToastUI();
-      alert("ECOSYSTEM MATRIX RESTORED: Mutation event reversed successfully.");
+      clearInterval(undoCountdownTimerInterval); clearTimeout(undoToastTimeoutContainer);
+      if (lastDeletedItemSnapshot.type === "bullet") { const targetCard = enterpriseServicesMatrix[lastDeletedItemSnapshot.cardIndex]; if (targetCard) { targetCard.bullets.splice(lastDeletedItemSnapshot.bulletIndex, 0, lastDeletedItemSnapshot.data); } } 
+      else if (lastDeletedItemSnapshot.type === "column") { enterpriseServicesMatrix.splice(lastDeletedItemSnapshot.index, 0, lastDeletedItemSnapshot.data); }
+      renderCmsDynamicServiceGrid(); dismissEmergencyUndoToastUI();
     }
 
-    // CMS PLATFORM NEW CONTAINER CORE INJECTOR
     function commitCmsInjectedNodeToArray() {
       if (activeClientSessionRole !== "Root Admin") return;
-
       const selectedPillarTheme = document.getElementById('cms-target-pillar').value;
       const parsedTitleString = document.getElementById('cms-input-title').value.trim();
       const parsedIconString = document.getElementById('cms-input-icon').value.trim();
       const rawBulletsString = document.getElementById('cms-input-bullets').value.trim();
-
-      if (!parsedTitleString || !parsedIconString || !rawBulletsString) {
-        alert("ERROR: Field parameters incomplete."); return;
-      }
-
+      if (!parsedTitleString || !parsedIconString || !rawBulletsString) { alert("ERROR: Field parameters incomplete."); return; }
       const structuralBulletsArray = rawBulletsString.split(',').map(item => item.trim()).filter(item => item.length > 0);
-      const freshlyCreatedServiceNode = {
-        id: `c-p-${Date.now()}`, theme: selectedPillarTheme, icon: parsedIconString, title: parsedTitleString, bullets: structuralBulletsArray
-      };
-
+      const freshlyCreatedServiceNode = { id: `c-p-${Date.now()}`, theme: selectedPillarTheme, icon: parsedIconString, title: parsedTitleString, bullets: structuralBulletsArray };
       enterpriseServicesMatrix.push(freshlyCreatedServiceNode);
-      renderCmsDynamicServiceGrid();
-      closeAdminPortalModal();
-
+      renderCmsDynamicServiceGrid(); closeAdminPortalModal();
       document.getElementById('cms-input-title').value = ''; document.getElementById('cms-input-icon').value = ''; document.getElementById('cms-input-bullets').value = '';
     }
 
-    // ========================================================================
-    // ROLE ACCESS RE-VERIFICATION ENGINE CONFIGS
-    // ========================================================================
+    // ------------------------------------------
+    // SUB-BLOCK F: RBAC GATEWAY CHALLENGERS
+    // ------------------------------------------
     const adminOverlay = document.getElementById('admin-portal-overlay');
-    const adminInnerCard = adminOverlay.querySelector('.relative');
-
-    function openAdminPortalModal() {
-      document.body.classList.add('overflow-hidden'); adminOverlay.classList.remove('hidden');
-      setTimeout(() => { adminOverlay.classList.remove('opacity-0'); adminOverlay.classList.add('opacity-100'); adminInnerCard.classList.remove('scale-95'); adminInnerCard.classList.add('scale-100'); }, 10);
-    }
-    function closeAdminPortalModal() {
-      document.body.classList.remove('overflow-hidden'); adminOverlay.classList.remove('opacity-100'); adminOverlay.classList.add('opacity-0'); adminInnerCard.classList.remove('scale-100'); adminInnerCard.classList.add('scale-95');
-      setTimeout(() => { adminOverlay.add ? adminOverlay.add('hidden') : adminOverlay.classList.add('hidden'); }, 300);
-    }
+    const adminInnerCard = adminOverlay ? adminOverlay.querySelector('.relative') : null;
+    function openAdminPortalModal() { document.body.classList.add('overflow-hidden'); if(adminOverlay) adminOverlay.classList.remove('hidden'); setTimeout(() => { if(adminOverlay) { adminOverlay.classList.remove('opacity-0'); adminOverlay.classList.add('opacity-100'); } if(adminInnerCard) { adminInnerCard.classList.remove('scale-95'); adminInnerCard.classList.add('scale-100'); } }, 10); }
+    function closeAdminPortalModal() { document.body.classList.remove('overflow-hidden'); if(adminOverlay) { adminOverlay.classList.remove('opacity-100'); adminOverlay.classList.add('opacity-0'); } if(adminInnerCard) { adminInnerCard.classList.remove('scale-100'); adminInnerCard.classList.add('scale-95'); } setTimeout(() => { if(adminOverlay) adminOverlay.classList.add('hidden'); }, 300); }
 
     function validateRoleAccessCredentials() {
       const accessInputPhrase = document.getElementById('admin-key-input').value.trim();
@@ -571,8 +554,7 @@
       const cmsTierIndicator = document.getElementById('cms-tier-badge');
 
       if (accessInputPhrase === "manager123") {
-        activeClientSessionRole = "Manager";
-        badge.textContent = "Role: Manager";
+        activeClientSessionRole = "Manager"; badge.textContent = "Role: Manager";
         badge.className = "px-3 py-1.5 rounded-lg bg-amber-500/10 text-xs font-mono font-bold border border-amber-500/30 text-amber-400";
         authSection.classList.add('hidden'); cmsHubSection.classList.remove('hidden'); cmsWriteBlock.classList.add('opacity-40', 'pointer-events-none');
         cmsTierIndicator.textContent = "Tier: Manager (Read-Only Control Insights Access)";
@@ -580,29 +562,26 @@
         renderCmsDynamicServiceGrid(); closeAdminPortalModal();
       } 
       else if (accessInputPhrase === "admin123") {
-        activeClientSessionRole = "Root Admin";
-        badge.textContent = "Role: Root Admin";
+        activeClientSessionRole = "Root Admin"; badge.textContent = "Role: Root Admin";
         badge.className = "px-3 py-1.5 rounded-lg bg-emerald-500/10 text-xs font-mono font-bold border border-emerald-500/30 text-emerald-400";
         authSection.classList.add('hidden'); cmsHubSection.classList.remove('hidden'); cmsWriteBlock.classList.remove('opacity-40', 'pointer-events-none');
         cmsTierIndicator.textContent = "Tier: Full Root Admin (Ecosystem Grid CRUD Control Active)";
         cmsTierIndicator.className = "px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px] uppercase";
         renderCmsDynamicServiceGrid(); closeAdminPortalModal();
-      } else {
-        alert("ERROR: Authorization access validation phrase string context layout dropped.");
-      }
+      } else { alert("ERROR: Authorization access validation phrase string context layout dropped."); }
       document.getElementById('admin-key-input').value = '';
     }
 
     function logoutAdminPortalTier() {
-      const badge = document.getElementById('active-role-badge');
-      activeClientSessionRole = "Visitor";
-      badge.textContent = "Role: Visitor";
-      badge.className = "px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold border border-zinc-300/40 dark:border-slate-700/40 text-blue-400";
+      const badge = document.getElementById('active-role-badge'); activeClientSessionRole = "Visitor";
+      badge.textContent = "Role: Visitor"; badge.className = "px-3 py-1.5 rounded-lg bg-zinc-200 dark:bg-slate-800 text-xs font-mono font-bold border border-zinc-300/40 dark:border-slate-700/40 text-blue-400";
       document.getElementById('admin-auth-panel').classList.remove('hidden'); document.getElementById('admin-cms-hub').classList.add('hidden');
       renderCmsDynamicServiceGrid(); closeAdminPortalModal();
     }
 
-    // STANDARD MODALS PRICING LOOPS
+    // ------------------------------------------
+    // SUB-BLOCK G: WIZARD PRICING & THEME ENGINE TOGGLES
+    // ------------------------------------------
     const modalOverlayContainer = document.getElementById('quote-modal-overlay');
     const modalInnerCardContainer = modalOverlayContainer ? modalOverlayContainer.querySelector('.relative') : null;
     function openQuoteModal() { document.body.classList.add('overflow-hidden'); if(modalOverlayContainer) modalOverlayContainer.classList.remove('hidden'); setTimeout(() => { if(modalOverlayContainer) { modalOverlayContainer.classList.remove('opacity-0'); modalOverlayContainer.classList.add('opacity-100'); } if(modalInnerCardContainer) { modalInnerCardContainer.classList.remove('scale-95'); modalInnerCardContainer.classList.add('scale-100'); } }, 10); }
@@ -629,9 +608,7 @@
     if (document.documentElement.classList.contains('dark')) { if(themeToggleSunIcon) themeToggleSunIcon.classList.remove('hidden'); } else { if(themeToggleMoonIcon) themeToggleMoonIcon.classList.remove('hidden'); }
     if(themeToggleBtn) {
       themeToggleBtn.addEventListener('click', function() {
-        if(themeToggleSunIcon && themeToggleMoonIcon) {
-          themeToggleSunIcon.classList.toggle('hidden'); themeToggleMoonIcon.classList.toggle('hidden');
-        }
+        if(themeToggleSunIcon && themeToggleMoonIcon) { themeToggleSunIcon.classList.toggle('hidden'); themeToggleMoonIcon.classList.toggle('hidden'); }
         if (document.documentElement.classList.contains('dark')) { document.documentElement.classList.remove('dark'); localStorage.setItem('theme', 'light'); } else { document.documentElement.classList.add('dark'); localStorage.setItem('theme', 'dark'); }
       });
     }
